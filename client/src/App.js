@@ -1,26 +1,25 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+// import MyFooter from '../src/Components/Footer/MyFooter';
+import { Route, Switch } from "react-router-dom";
+import MyKitchen from "../src/Components/MyKitchen/MyKitchen";
+import Recipes from "../src/Components/Recipes/Recipes";
+import MyShoppingList from "../src/Components/MyShoppingList/MyShoppingList";
+import MyProfile from "../src/Components/MyProfile/MyProfile";
+
+import "./App.css";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-        <h1>Hola Patri</h1>
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <h1>Hola desde App</h1>
+
+        <Switch>
+          <Route exact path="/my-kitchen" component={MyKitchen} />
+          <Route exact path="/recipes" component={Recipes} />
+          <Route exact path="/my-shopping-list" component={MyShoppingList} />
+          <Route exact path="/my-profile" component={MyProfile} />
+        </Switch>
       </div>
     );
   }

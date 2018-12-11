@@ -1,0 +1,16 @@
+.caja{
+  justify-content: flex-end;
+}
+
+.iconsFooter {
+  height: 70px;
+  display: flex;
+  background-color: red;
+  justify-content: space-around;
+  padding-top: 20px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  
+  
+}
