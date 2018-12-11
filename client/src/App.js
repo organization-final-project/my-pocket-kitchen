@@ -8,6 +8,10 @@ import MyProfile from "../src/Components/MyProfile/MyProfile";
 
 import "./App.css";
 
+
+import login from "./components/login/login";
+import signup from "./components/signup/signup";
+
 class App extends Component {
   render() {
     return (
@@ -19,6 +23,8 @@ class App extends Component {
           <Route exact path="/recipes" component={Recipes} />
           <Route exact path="/my-shopping-list" component={MyShoppingList} />
           <Route exact path="/my-profile" component={MyProfile} />
+          <Route exact path="/" component={login} />
+          <Route path="/signup" component={signup} />
         </Switch>
       </div>
     );
