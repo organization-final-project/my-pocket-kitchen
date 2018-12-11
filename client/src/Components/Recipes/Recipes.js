@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
+import ReusableHeader from "../ReusableHeader/ReusableHeader";
 
 import MyFooter from '../Footer/MyFooter';
+
 export default class Recipes extends Component {
+  constructor(){
+    super()
+    this.headerTitle="My recipes";
+  }
   render() {
     return (
       <div>
-        <h1>Esta es la pagina de recipes</h1>
+        <ReusableHeader title={this.headerTitle} />
         <MyFooter/>
       </div>
     )

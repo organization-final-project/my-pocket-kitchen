@@ -6,6 +6,7 @@ export default class signup extends Component {
   render() {
     return (
         <div className="login">
+        <img src="logo-provisional.png" alt="" height="150px"/>
         <form className="form">
         <div className="form__group">
             <input type="text" placeholder="Username" className="form__input" />

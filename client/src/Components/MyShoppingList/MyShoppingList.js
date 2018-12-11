@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 import MyFooter from '../Footer/MyFooter';
+import ReusableHeader from "../ReusableHeader/ReusableHeader";
 
 export default class MyShoppingList extends Component {
+  constructor(){
+    super()
+    this.headerTitle="My shopping list";
+  }
   render() {
     return (
       <div>
-        Esta es la página de shopping list
+      <ReusableHeader title={this.headerTitle} />
 
          <MyFooter/>
       </div>
