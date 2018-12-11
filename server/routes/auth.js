@@ -7,23 +7,6 @@ const User = require("../models/User");
 const bcrypt = require("bcrypt");
 const bcryptSalt = 10;
 
-// router.post("/login", function(req, res, next) {
-//   passport.authenticate("local", function(err, user, info) {
-//     if (err) {
-//       return res.status(500).json({ message: "Error login" });
-//     }
-//     if (!user) {
-//       return res.status(500).json({ message: "Error login" });
-//     }
-
-//     req.logIn(user, function(err) {
-//       if (err) {
-//         return res.status(500).json({ message: "Error login" });
-//       }
-//       return res.status(200).json(user);
-//     });
-//   })(req, res, next);
-// });
 
 router.post("/login", (req, res, next) => {
   passport.authenticate("local", (err, theUser, failureDetails) => {
