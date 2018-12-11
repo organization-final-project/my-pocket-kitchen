@@ -6,15 +6,15 @@ export default class signup extends Component {
   render() {
     return (
         <div className="login">
-        <form class="form">
-        <div class="form__group">
-            <input type="text" placeholder="Username" class="form__input" />
+        <form className="form">
+        <div className="form__group">
+            <input type="text" placeholder="Username" className="form__input" />
         </div>
-        <div class="form__group">
-            <input type="password" placeholder="Password" class="form__input" />
+        <div className="form__group">
+            <input type="password" placeholder="Password" className="form__input" />
         </div>
         <button>Submit</button>
-        <button class="btn" type="button"><Link to='/'>Login</Link></button>
+        <button className="btn" type="button"><Link to='/'>Login</Link></button>
     </form>
       </div>
     )

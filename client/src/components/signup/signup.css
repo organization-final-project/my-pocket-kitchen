@@ -1,5 +1,4 @@
 
-
 .login{
     border:1px solid black;
     display:flex;
@@ -9,7 +8,7 @@
     align-content: center;
     margin: 0 auto;
     padding: 50% 1% 116%;
-    background: linear-gradient(45deg, #6FB247 10%, #F8E5F8 90%);
+    background-color: #FF9346;
     height: 100vh;
     animation: move 10s ease infinite;
 }
