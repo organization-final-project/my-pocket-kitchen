@@ -8,7 +8,7 @@
     align-content: center;
     margin: 0 auto;
     padding: 50% 1% 116%;
-    /* background-color: #FF9346; */
+    background-color: #FF9346; 
     height: 100vh;
     /* animation: move 10s ease infinite; */
 }
