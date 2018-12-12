@@ -65,7 +65,7 @@ export default class Signup extends Component {
               onChange={e => this.handleChange(e)}
             />
           </div>
-          <input type= "submit" value= "Signup"/>
+          <input type= "submit" onClick={()=>this.props.getUser(this.state)} value= "Signup"/>
           <button className="btn" type="button">
             <Link to="/">Login</Link>
           </button>

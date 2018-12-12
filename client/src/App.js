@@ -22,8 +22,6 @@ class App extends Component {
     };
 
     this.authService = new AuthService();
-
-    this.fetchUser();
   }
 
   fetchUser = () => {
@@ -36,26 +34,32 @@ class App extends Component {
     this.setState({ ...this.state, user });
   };
   logout = () => {
+    console.log("logout")
     this.authService
       .logout()
       .then(() => this.setState({ ...this.state, user: null }));
   };
 
-  render() {
+  componentWillMount(){
     this.fetchUser();
+  }
+
+  render() {
     if (this.state.user) {
       return (
+        
         <div className="App">
+        {this.state.user.username}
           <Switch>
-            <Route exact path="/my-kitchen" component={MyKitchen} />
-            <Route exact path="/recipes" component={Recipes} />
-            <Route exact path="/my-shopping-list" component={MyShoppingList} />
-            <Route exact path="/my-profile" component={MyProfile} />
+            <Route path="/my-kitchen" component={MyKitchen} />
+            <Route path="/recipes" component={Recipes} />
+            <Route path="/my-shopping-list" component={MyShoppingList} />
+            <Route path="/my-profile" component={MyProfile} />
             <Route
               exact
               path="/"
               render={() =>
-                this.user ? <Redirect to="/my-kitchen" /> : <Signup />
+                this.state.user ? <Redirect to="/my-kitchen" />  : <Signup getUser={this.getUser}  />
               }
             />{" "}
             />
@@ -65,6 +69,7 @@ class App extends Component {
               render={() => <Signup getUser={this.getUser} />}
             />
           </Switch>
+          <button onClick={()=>this.logout()}>Logout</button>
         </div>
       );
     } else {
@@ -72,13 +77,13 @@ class App extends Component {
         <div className="App">
           {/* {welcome}
          <Message user={this.state.user} /> */}
-
+<p>bo user</p>
           <Switch>
             <Route
               exact
               path="/"
               render={() =>
-                this.user ? <Redirect to="/my-kitchen" /> : <Signup />
+                 <Signup getUser={this.getUser}/>
               }
             />{" "}
             />
