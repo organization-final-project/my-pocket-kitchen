@@ -37,9 +37,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'hbs');
-app.use(express.static(path.join(__dirname, 'public')));
+
 
 
 // Enable authentication using session + passport
@@ -60,10 +58,7 @@ app.use(
 );
 
 const authPaths = require("./routes/auth");
-app.use("/", authPaths);
+app.use("/api/auth", authPaths);
 
-app.use((req, res) => {
-  res.sendFile(`${__dirname}/public/index.html`);
-});
 
 module.exports = app;

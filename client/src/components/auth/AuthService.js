@@ -8,15 +8,18 @@ class AuthService {
     })
   }
 
-  signup = (user) => {
-    // axios.post("http://localhost:5000/api/auth/signup", {user}, {withCredentials: true})
-    return this.service.post('/signup', user)
+  signup = (username) => {
+   
+    //  axios.post("/signup", {user}, {withCredentials: true})
+    console.log(username)
+    return this.service.post('/signup', username)
     .then(response => response.data)
+    .catch(e => console.log(e))
   }
 
-  login = (user) => {
-    // axios.post("http://localhost:5000/api/auth/login", {user}, {withCredentials: true})
-    return this.service.post('/', user)
+  login = (username) => {
+    // axios.post("http://localhost:5000/auth/login", {user}, {withCredentials: true})
+    return this.service.post('/', username)
     .then(response => response.data)
   }
 

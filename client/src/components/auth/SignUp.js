@@ -1,58 +1,76 @@
-import React, { Component } from 'react';
-import AuthService from './AuthService';
-import {Redirect} from "react-router-dom";
+import React, { Component } from "react";
+import AuthService from "./AuthService";
+import { Redirect } from "react-router-dom";
 import { Link } from "react-router-dom";
-import '../signup/signup.css'
+import "../signup/signup.css";
 
 export default class Signup extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
-      username: '',
-      password: '',
-      redirect: false
-    }
+      username: "",
+      password: ""
+      // redirect: false
+    };
 
     this.authService = new AuthService();
   }
 
-  handleFormSubmit = (e) => {
+  handleFormSubmit = e => {
     e.preventDefault();
 
-    const {username, password} = this.state;
+    const { username, password } = this.state;
+   
 
-    this.authService.signup({username, password})
-    .then(user => {
-      this.props.getUser(user)
-      this.setState({username: '', password: '', redirect: true})
+    this.authService.signup({ username, password }).then(receivedUser => {
+      this.props.getUser(receivedUser)
+      this.setState({ username: "", password: "" });
+      
     });
-  }
+  };
 
-  handleChange = (e) => {
-    const {name, value} = e.target;
-
-    this.setState({[name]: value});
-  }
+  handleChange = e => {
+    const { name, value } = e.target;
+  console.log(name)
+    this.setState({ [name]: value });
+  };
 
   render() {
-    if(this.state && this.state.redirect) {
-      return <Redirect to="/" />
+    if (this.state && this.state.redirect) {
+      return <Redirect to="/" />;
     }
-
+  
     return (
       <div className="login">
-      <form className="form" onSubmit={this.handleFormSubmit}>
-      <div className="form__group">
-          <input type="text" placeholder="Username" className="form__input" onChange={e => this.handleChange(e)} />
+        <form className="form" onSubmit={this.handleFormSubmit}>
+          <div className="form__group">
+            <input
+              type="text"
+              name="username"
+              placeholder="Username"
+              className="form__input"
+             
+              onChange={e => this.handleChange(e)}
+          
+            />
+          </div>
+          <div className="form__group">
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              className="form__input"
+             
+              onChange={e => this.handleChange(e)}
+            />
+          </div>
+          <input type= "submit" value= "Signup"/>
+          <button className="btn" type="button">
+            <Link to="/">Login</Link>
+          </button>
+        </form>
       </div>
-      <div className="form__group">
-          <input type="password" placeholder="Password" className="form__input" onChange={e => this.handleChange(e)}/>
-      </div>
-      <button>Submit</button>
-      <button className="btn" type="button"><Link to='/'>Login</Link></button>
-  </form>
-    </div>
-    )
+    );
   }
 }

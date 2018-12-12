@@ -35,8 +35,9 @@ router.post("/login", (req, res, next) => {
 router.post("/signup", (req, res, next) => {
   const username = req.body.username;
   const password = req.body.password;
+ 
+ 
   // const email = req.body.email;
-
   if (username === "" || password === "") {
     res.status(500).json({ message: "Indicate username and password" });
     return;
@@ -56,8 +57,8 @@ router.post("/signup", (req, res, next) => {
       password: hashPass,
       // email
     });
-
-    newUser.save().then(() => {
+   
+    newUser.save().then((user) => {
       if (err) {
         res.status(500).json({ message: "Something went wrong" });
       } else {
@@ -76,6 +77,7 @@ router.post("/signup", (req, res, next) => {
 
 router.get("/loggedin", (req, res) => {
   if (req.isAuthenticated()) {
+ 
     return res.status(200).json(req.user);
   } else {
     return res.status(403).json({ message: "Unauthorized" });
