@@ -20,7 +20,7 @@ router.get('/', (req,res, next)=>{
         //const allRecipes= recipes.data.hits esta es la ruta general de todas las recetas
         const allRecipes= allInformationRecipes(recipes.data.hits);
         res.json({allRecipes});
-        // console.log(allRecipes)
+        console.log(allRecipes)
     })
     .catch((error)=>{
         console.log(error)
