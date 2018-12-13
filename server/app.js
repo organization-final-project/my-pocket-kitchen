@@ -58,8 +58,8 @@ app.use(
   })
 );
 
-const authPaths = require("./routes/auth");
-app.use("/api/auth", authPaths);
+
+app.use("/api", require("./routes/index"));
 
 
 module.exports = app;

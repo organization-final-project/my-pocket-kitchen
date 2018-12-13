@@ -90,9 +90,10 @@ class App extends Component {
         <div className="App">
          <Route path="/my-kitchen" component={MyKitchen} />
             <Route path="/recipes" component={Recipes} />
+            <Route path="/my-shopping-list" component={MyShoppingList} />
           {/* {welcome} */}
           {/* <Message user={this.state.user} /> */}
-        
+          {/* <p>bo user 2</p> */}
           <Switch>
             <Route
               exact
