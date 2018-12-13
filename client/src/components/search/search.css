@@ -8,3 +8,11 @@
   margin: 2vh;
   width: 80%;
 }
+
+.checkboxKitchen {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  height: 80px;
+ 
+}

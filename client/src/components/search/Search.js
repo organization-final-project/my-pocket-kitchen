@@ -9,7 +9,7 @@ export default class Search extends Component {
     return (
       <div>
         <div className="search">
-          <span style={{ fontSize: 48, color: "black" }}>
+          <span style={{ fontSize: 38, color: "black" }}>
             <i class="fas fa-search" />
           </span>
 
@@ -21,6 +21,9 @@ export default class Search extends Component {
             />
           </div>
         </div>
+
+
+
       </div>
     );
   }
