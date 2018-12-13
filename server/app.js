@@ -46,6 +46,7 @@ app.use(
     secret: "irongenerator",
     resave: true,
     saveUninitialized: true,
+    cookie: { maxAge: 60000000 },
     store: new MongoStore({ mongooseConnection: mongoose.connection })
   })
 );

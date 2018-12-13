@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 // import MyFooter from '../src/Components/Footer/MyFooter';
 import { Route, Switch, Link } from "react-router-dom";
-import { Route, Switch } from "react-router-dom";
 import MyKitchen from "./components/MyKitchen/MyKitchen";
 import Recipes from "./components/Recipes/Recipes";
 import MyShoppingList from "./components/MyShoppingList/MyShoppingList";
@@ -11,7 +10,7 @@ import Signup from "./components/auth/SignUp";
 import Logout from "./components/auth/Logout";
 import AuthService from "./components/auth/AuthService";
 import { Redirect } from "react-router-dom";
-import Message from "./components/Message";
+// import Message from "./components/Message";
 
 import "./App.css";
 
@@ -39,8 +38,7 @@ class App extends Component {
     console.log("logout");
     this.authService
       .logout()
-      .then(() => this.setState({ ...this.state, user: null }))
-      
+      .then(() => this.setState({ ...this.state, user: null }));
   };
 
   componentWillMount() {
@@ -80,23 +78,21 @@ class App extends Component {
                 )
               }
             />
-            {/* <Route
-              exact
-              path="/logout"
-              render={() =>  !this.state.user ? <Redirect to="/Signup" />  : <Login getUser={this.getUser}  /> }
-            /> */}
           </Switch>
-        
-            <button onClick={() => this.logout() && <Redirect to="/"></Redirect>}>Logout</button>
-          
+
+          <button onClick={() => this.logout() && <Redirect to="/" />}>
+            Logout
+          </button>
         </div>
       );
     } else {
       return (
         <div className="App">
+         <Route path="/my-kitchen" component={MyKitchen} />
+            <Route path="/recipes" component={Recipes} />
           {/* {welcome} */}
-          <Message user={this.state.user} />
-          <p>bo user 2</p>
+          {/* <Message user={this.state.user} /> */}
+        
           <Switch>
             <Route
               exact

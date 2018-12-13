@@ -11,9 +11,9 @@ export default class MyShoppingList extends Component {
   render() {
     return (
       <div>
-        Esta es la página de shopping list
+       <ReusableHeader title={this.headerTitle} />
         <Search/>
-      <ReusableHeader title={this.headerTitle} />
+      
 
          <MyFooter/>
       </div>
