@@ -11,8 +11,7 @@ export default class MyShoppingList extends Component {
   }
 
   onSearchChange(search) {
-    //todo: hablar cond dconsole.log(`Estais buscando: ${search}`)
-    // axios.get(url/api/search/${search})
+  
   }
 
   render() {

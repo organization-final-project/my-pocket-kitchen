@@ -7,16 +7,22 @@ import CardRecipe from "./CardRecipe"
 export default class Recipes extends Component {
   constructor() {
     super()
-    this.headerTitle= "My recipes"
- 
-
+    this.headerTitle= "My recipes";
   }
+    onSearchChange(search) {
+      
+      //todo: hablar cond dconsole.log(`Estais buscando: ${search}`)
+      // axios.get(url/api/search/${search})
+    }
+  
+
+  
 
   render() {
     return (
       <div>
        <ReusableHeader title={this.headerTitle}  />
-        <Search/>
+        <Search onSearchChange={this.onSearchChange}/>
         <CardRecipe/>
         <MyFooter/>
          

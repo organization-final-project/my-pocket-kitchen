@@ -26,6 +26,20 @@ export default class CardKitchen extends Component {
                 <span>Fridge</span>
               </a>
             </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             <li>
               <a>
                 <span className="icon is-small">

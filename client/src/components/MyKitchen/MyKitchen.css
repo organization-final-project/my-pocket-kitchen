@@ -1,0 +1,9 @@
+.searchButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttonAdd {
+  margin: 10% 10% 10% 0%;
+}
