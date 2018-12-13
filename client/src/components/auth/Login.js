@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import AuthService from './AuthService';
 import { Link } from "react-router-dom";
-import '../login/login.css'
+import './Login.css'
 
 export default class Login extends Component {
   constructor() {
@@ -35,6 +35,7 @@ export default class Login extends Component {
     
     return (
       <div className="login">
+      <img className="logo" src="logo-provisional.png" alt=""/>
       <form className="form" onSubmit={this.handleFormSubmit}>
         <input type="text" placeholder="Username" className="form__input" onChange={e => this.handleChange(e)} />
         <input type="password" placeholder="Password" className="form__input" onChange={e => this.handleChange(e)} />
@@ -42,13 +43,8 @@ export default class Login extends Component {
         
         <button className="submit-button"  onClick={()=>this.props.getUser(this.state)} value= "Login"    >Submit</button>
         <button className="btn" type="button">
-          <Link to="/signup">Sign up</Link>
+          <Link to="/signup">Or sign up</Link>
         </button>
-
-
-
-
-      <fieldset> Hola qué tal</fieldset>
       </form>
     </div>
     )

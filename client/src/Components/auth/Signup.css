@@ -1,0 +1,38 @@
+.login {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  align-content: center;
+  margin: 0 auto;
+  padding: 50% 1% 116%;
+  background-color: #ff9346;
+  height: 100vh;
+  background-image: url("background-food_opt.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+input {
+  width: 80%;
+  border-radius: 10px;
+}
+
+.submit-button {
+  background-color: white;
+  border: none;
+  border-radius: 20%;
+  padding: 2% 5%;
+}
+
+.logo {
+  height: 20vh;
+  width: 45vw;
+  margin: 0 auto;
+}
+/* 
+.form {
+  display: flex;
+  flex-direction: column;
+} */

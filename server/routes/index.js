@@ -5,9 +5,8 @@ const router = express.Router();
 /* GET home page */
 
 const authRoutes = require("./auth");
-app.use("/auth", authRoutes);
+router.use("/auth", authRoutes);
 
-
-
+router.use('/recipes', require('./recipes'))
 
 module.exports = router;
