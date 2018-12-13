@@ -1,19 +1,28 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import ReusableHeader from "../ReusableHeader/ReusableHeader";
-
-import MyFooter from '../Footer/MyFooter';
+import axios from 'axios';
+import MyFooter from "../Footer/MyFooter";
 
 export default class Recipes extends Component {
-  constructor(){
+  constructor() {
     super()
-    this.headerTitle="My recipes";
+    this.headerTitle= "My recipes"
+ 
+
   }
+
   render() {
     return (
       <div>
-        <ReusableHeader title={this.headerTitle} />
-        <MyFooter/>
+        <ReusableHeader title={this.headerTitle}  />
+        <input
+          className="input is-small"
+          type="text"
+          placeholder="Small input"
+          onChange={this.searchRecipes} />
+          
+        <MyFooter />
       </div>
-    )
+    );
   }
 }

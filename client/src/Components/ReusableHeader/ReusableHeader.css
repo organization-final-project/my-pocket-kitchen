@@ -5,9 +5,11 @@
     align-items: center;
     border-bottom: 2px solid #2F4C4F; 
     background-color: #42A9B6;
+    color:black;
+    padding: 1%;
 }
 .header img {
-    height: 4vh;
+    height: 6vh;
     width:7vw;
     padding-top: 3%;
 }

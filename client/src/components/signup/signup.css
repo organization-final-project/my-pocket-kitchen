@@ -11,7 +11,9 @@
     background-color: #FF9346;
     height: 100vh;
     animation: move 10s ease infinite;
+    /* background-image: url('background-food_opt.jpg') */
 }
+
 input{
     width:80%;
     border-radius: 10px;
