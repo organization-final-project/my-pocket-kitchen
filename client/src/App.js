@@ -7,9 +7,10 @@ import MyShoppingList from "./components/MyShoppingList/MyShoppingList";
 import MyProfile from "./components/MyProfile/MyProfile";
 import Login from "./components/auth/Login";
 import Signup from "./components/auth/SignUp";
+import Logout from "./components/auth/Logout";
 import AuthService from "./components/auth/AuthService";
 import { Redirect } from "react-router-dom";
-// import Message from "./components/Message";
+import Message from "./components/Message";
 
 import "./App.css";
 
@@ -34,22 +35,22 @@ class App extends Component {
     this.setState({ ...this.state, user });
   };
   logout = () => {
-    console.log("logout")
+    console.log("logout");
     this.authService
       .logout()
-      .then(() => this.setState({ ...this.state, user: null }));
+      .then(() => this.setState({ ...this.state, user: null }))
+      
   };
 
-  componentWillMount(){
+  componentWillMount() {
     this.fetchUser();
   }
 
   render() {
     if (this.state.user) {
       return (
-        
         <div className="App">
-        {this.state.user.username}
+          {this.state.user.username}
           <Switch>
             <Route path="/my-kitchen" component={MyKitchen} />
             <Route path="/recipes" component={Recipes} />
@@ -59,32 +60,47 @@ class App extends Component {
               exact
               path="/"
               render={() =>
-                this.state.user ? <Redirect to="/my-kitchen" />  : <Signup getUser={this.getUser}  />
+                this.state.user ? (
+                  <Redirect to="/my-kitchen" />
+                ) : (
+                  <Login getUser={this.getUser} />
+                )
               }
             />{" "}
             />
             <Route
               exact
               path="/signup"
-              render={() => <Signup getUser={this.getUser} />}
+              render={() =>
+                this.state.user ? (
+                  <Redirect to="/my-kitchen" />
+                ) : (
+                  <Signup getUser={this.getUser} />
+                )
+              }
             />
+            {/* <Route
+              exact
+              path="/logout"
+              render={() =>  !this.state.user ? <Redirect to="/Signup" />  : <Login getUser={this.getUser}  /> }
+            /> */}
           </Switch>
-          <button onClick={()=>this.logout()}>Logout</button>
+        
+            <button onClick={() => this.logout() && <Redirect to="/"></Redirect>}>Logout</button>
+          
         </div>
       );
     } else {
       return (
         <div className="App">
-          {/* {welcome}
-         <Message user={this.state.user} /> */}
-<p>bo user</p>
+          {/* {welcome} */}
+          <Message user={this.state.user} />
+          <p>bo user 2</p>
           <Switch>
             <Route
               exact
               path="/"
-              render={() =>
-                 <Signup getUser={this.getUser}/>
-              }
+              render={() => <Login getUser={this.getUser} />}
             />{" "}
             />
             <Route

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import AuthService from "./AuthService";
 import { Redirect } from "react-router-dom";
 import { Link } from "react-router-dom";
-import "../signup/signup.css";
+
 
 export default class Signup extends Component {
   constructor(props) {
@@ -32,7 +32,7 @@ export default class Signup extends Component {
 
   handleChange = e => {
     const { name, value } = e.target;
-  console.log(name)
+ 
     this.setState({ [name]: value });
   };
 

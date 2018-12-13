@@ -38,10 +38,16 @@ export default class Login extends Component {
       <form className="form" onSubmit={this.handleFormSubmit}>
         <input type="text" placeholder="Username" className="form__input" onChange={e => this.handleChange(e)} />
         <input type="password" placeholder="Password" className="form__input" onChange={e => this.handleChange(e)} />
-        <button className="submit-button">Submit</button>
+        
+        
+        <button className="submit-button"  onClick={()=>this.props.getUser(this.state)} value= "Login"    >Submit</button>
         <button className="btn" type="button">
           <Link to="/signup">Sign up</Link>
         </button>
+
+
+
+
       <fieldset> Hola qué tal</fieldset>
       </form>
     </div>
