@@ -14,16 +14,34 @@ router.get('/', (req,res, next)=>{
     .then((recipes)=>{
       
         // console.log(recipes.data.hits)
-        const recipeName=recipes.data.hits.label
-        const recipeImage=recipes.data.hits.image
-        const recipeIngredients=recipes.data.hits.ingredientLines
-        console.log(recipeIngredients)
-        console.log("entra")
+        // const recipeName=recipes.data.hits[0].recipe.label
+        // const recipeImage=recipes.data.hits[0].recipe.image
+        // const recipeIngredients=recipes.data.hits[0].recipe.ingredientLines
+        //const allRecipes= recipes.data.hits esta es la ruta general de todas las recetas
+        const allRecipes= allInformationRecipes(recipes.data.hits);
+        res.json({allRecipes});
+        // console.log(allRecipes)
     })
     .catch((error)=>{
         console.log(error)
     })
 })
+
+function allInformationRecipes (arr){
+    const allRecipes={
+        recipesDetails:[]
+       
+    };
+    for(var i=0;i<arr.length;i++){
+        allRecipes.recipesDetails.push({
+            recipesDetails:{
+                recipeName: arr[i].recipe.label,
+                recipeImage: arr[i].recipe.image,
+                recipeIngredientes:arr[i].recipe.ingredientLines
+            }
+        })
+    } console.log(allRecipes.recipesDetails)
+}
 
 
 module.exports = router;

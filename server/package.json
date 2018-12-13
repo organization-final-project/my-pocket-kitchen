@@ -29,6 +29,7 @@
     "serve-favicon": "^2.5.0"
   },
   "devDependencies": {
+    "@babel/helper-regex": "^7.0.0",
     "nodemon": "^1.12.1"
   }
 }
