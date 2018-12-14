@@ -7,20 +7,24 @@ export default class CardRecipe extends Component {
     super();
     this.state = { 
       name: "Paella",
-      // image: 
       ingredients: ["arroz", "sal", "pollo"]
 
     }
   }
+
+  // updateIngredients = (ing) =>{
+  //   this.setState({ingredients: recipe.recipeDetails.ingredients})
+  // }
 
   render() {
     return (
       <div>
         
         <div className = "card">
-        <h1>{this.state.name}</h1>
-        <img src="" alt=""/>
-        {this.state.ingredients.map(ingredient=>{
+        <h1>{this.props.name}</h1>
+        <img src={this.props.img} alt="" style={{height:100}}/>
+        {this.props.ing.map(ingredient=>{
+          console.log(ingredient)
           return <p>{ingredient}</p>
         
         })}
