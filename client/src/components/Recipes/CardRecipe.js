@@ -18,8 +18,10 @@ export default class CardRecipe extends Component {
       <div>
         
         <div className = "card">
-        <h1>{this.state.name}</h1>
+        <h1>{this.props.title}</h1>
         <img src="" alt=""/>
+        {/* <p>{this.props.}</p> */}
+     
         {this.state.ingredients.map(ingredient=>{
           return <p>{ingredient}</p>
         
