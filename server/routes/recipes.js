@@ -20,7 +20,7 @@ router.get('/', (req,res, next)=>{
         //const allRecipes= recipes.data.hits esta es la ruta general de todas las recetas
         const allRecipes= allInformationRecipes(recipes.data.hits);
         res.json({allRecipes});
-        console.log(allRecipes)
+       // console.log(allRecipes.recipesDetails)
     })
     .catch((error)=>{
         console.log(error)
@@ -28,19 +28,19 @@ router.get('/', (req,res, next)=>{
 })
 
 function allInformationRecipes (arr){
-    const allRecipes={
-        recipesDetails:[]
-       
-    };
+    const allRecipes=[];
+
     for(var i=0;i<arr.length;i++){
-        allRecipes.recipesDetails.push({
-            recipesDetails:{
-                recipeName: arr[i].recipe.label,
-                recipeImage: arr[i].recipe.image,
-                recipeIngredientes:arr[i].recipe.ingredientLines
+        allRecipes.push({
+            recipeDetails:{
+                name: arr[i].recipe.label,
+                img: arr[i].recipe.image,
+                ingredients:arr[i].recipe.ingredientLines
             }
         })
-    } console.log(allRecipes.recipesDetails)
+     } console.log(allRecipes.recipesDetails)
+
+     return allRecipes;
 }
 
 
