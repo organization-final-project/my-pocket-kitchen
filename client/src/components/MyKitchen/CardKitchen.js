@@ -26,19 +26,11 @@ export default class CardKitchen extends Component {
                 <span>Fridge</span>
               </a>
             </li>
-
-
-
-
-
-
-
-
-
-
-
-
-
+            <div className="listFridge">
+              <ul>
+                {/* <li>{this.props.list}</li> */}
+              </ul>
+            </div>
 
             <li>
               <a>

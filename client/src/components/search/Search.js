@@ -13,6 +13,8 @@ export default class Search extends Component {
           <span style={{ fontSize: 38, color: "black" }}>
             <i class="fas fa-search" />
           </span>
+
+         
           <form className="form" id="addItemForm">
           <div className="control">
             <input
