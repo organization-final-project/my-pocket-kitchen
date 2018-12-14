@@ -38,8 +38,7 @@ class App extends Component {
     console.log("logout");
     this.authService
       .logout()
-      .then(() => this.setState({ ...this.state, user: null }))
-      
+      .then(() => this.setState({ ...this.state, user: null }));
   };
 
   componentWillMount() {
@@ -80,9 +79,10 @@ class App extends Component {
               }
             />
           </Switch>
-        
-            <button onClick={() => this.logout() && <Redirect to="/"></Redirect>}>Logout</button>
-          
+
+          <button onClick={() => this.logout() && <Redirect to="/" />}>
+            Logout
+          </button>
         </div>
       );
     } else {
