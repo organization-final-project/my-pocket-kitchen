@@ -2,13 +2,13 @@
 .iconsFooter {
   height: 70px;
   display: flex;
-  background-color: #FF842D;
+  background-color: #42A9B6;
   justify-content: space-around;
   padding-top: 20px;
   position: fixed;
   bottom: 0;
   width: 100%;
-  border-top: 2px solid #B2520D; 
+  /* border-top: 2px solid #B2520D;  */
   
 }
 

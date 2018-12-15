@@ -2,8 +2,27 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  /* position: relative;
+  top: 20vh; */
+
+  padding: 2vh;
+  position: relative;
+  top: 10vh;
 }
 
-.buttonAdd {
+/* .buttonAdd {
   margin: 10% 10% 10% 0%;
+} */
+
+/* .buttonAdd{
+    
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 8vh 20vh 4vh 20vh;
 }
+
+.button.is-primary{
+  background-color: #42A9B6;
+} */
+

@@ -60,12 +60,12 @@ export default class MyKitchen extends Component {
     return (
       <div>
         <ReusableHeader title={this.headerTitle} />
-        <div className="searchButton">
+      
           <Search onSearchChange={this.onSearchChange} />
           <a class="button is-primary buttonAdd" onClick={this.addItem}>
             Add
           </a>
-        </div>
+    
 
         <CardKitchen />
         {/* <Logout/> */}

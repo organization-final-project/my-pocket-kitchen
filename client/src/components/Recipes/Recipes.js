@@ -4,6 +4,7 @@ import ReusableHeader from "../ReusableHeader/ReusableHeader";
 import MyFooter from "../Footer/MyFooter";
 import CardRecipe from "./CardRecipe"
 import axios from 'axios';
+import './CardRecipe.css'
 
 export default class Recipes extends Component {
   constructor() {
@@ -16,21 +17,13 @@ export default class Recipes extends Component {
  
 
   }
-    onSearchChange(search) {
-      
-      //todo: hablar cond dconsole.log(`Estais buscando: ${search}`)
-      // axios.get(url/api/search/${search})
-    }
-  
-
-  
 
   onSearchChange = (e) => {
    
     if(e.length>4){
 
       console.log(e.length)
-      axios.post('http://localhost:5000/api/recipes', {search: e, test: 'test'})
+      axios.post('http://localhost:5000/api/recipes', {search: e})
         .then(res => {
           console.log('respuesta de mi server', res.data.allRecipes)
           this.setState({recipes: res.data.allRecipes})
@@ -47,13 +40,13 @@ export default class Recipes extends Component {
     return (
       <div>
        <ReusableHeader title={this.headerTitle}  />
-        <Search onSearchChange={this.onSearchChange} test='hola'/>
+        <Search onSearchChange={this.onSearchChange}/>
         {Array.isArray(this.state.recipes) ? this.state.recipes.map(recipe => {
           console.log(recipe.recipeDetails.ingredients)
             return <CardRecipe name={recipe.recipeDetails.name} img={recipe.recipeDetails.img} ing={recipe.recipeDetails.ingredients}/>
          
           
-          }) : <p>Busca receta por ingrediente</p>}
+          }) : <p className="search-instruction">Busca receta por ingrediente</p>}
         
         <MyFooter/>
          
