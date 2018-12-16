@@ -20,7 +20,7 @@ export default class Search extends Component {
             <input
               className="input is-hovered "
               type="text"
-              placeholder="Search the ingredient"
+              placeholder="Search..."
               onChange={this.changeHandler}
               id= "addInput"
             />
