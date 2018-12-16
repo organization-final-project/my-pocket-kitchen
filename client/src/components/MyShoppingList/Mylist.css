@@ -27,3 +27,14 @@
 .fa-trash-alt{
     margin-left:1.3vw;
 }
+
+.fa-pencil-alt{
+    margin-left:1.3vw;
+    margin-bottom:0.8vh;
+    color:black;
+}
+.title-my-list{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+}

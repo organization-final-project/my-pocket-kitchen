@@ -38,7 +38,7 @@ export default class MyShoppingList extends Component {
           Add
         </a>
         <div>
-          <h4 className="title-shopping-list">My shopping list</h4>
+          <div className="title-my-list"><h4 className="title-shopping-list">My shopping list</h4><i class="fas fa-pencil-alt"></i></div>
           <ul>
             {this.state.MyShoppingList.map(item => {
               console.log(item);

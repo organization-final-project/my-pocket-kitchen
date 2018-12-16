@@ -46,7 +46,7 @@ export default class Recipes extends Component {
             return <CardRecipe name={recipe.recipeDetails.name} img={recipe.recipeDetails.img} ing={recipe.recipeDetails.ingredients}/>
          
           
-          }) : <p className="search-instruction">Busca receta por ingrediente</p>}
+          }) : <p className="search-instruction">Search recipe by ingredient...</p>}
         
         <MyFooter/>
          

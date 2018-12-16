@@ -91,6 +91,7 @@ class App extends Component {
          <Route path="/my-kitchen" component={MyKitchen} />
             <Route path="/recipes" component={Recipes} />
             <Route path="/my-shopping-list" component={MyShoppingList} />
+            <Route path="/my-profile" component={MyProfile} />
           {/* {welcome} */}
           {/* <Message user={this.state.user} /> */}
           {/* <p>bo user 2</p> */}

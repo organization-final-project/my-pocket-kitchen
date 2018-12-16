@@ -10,18 +10,23 @@
     padding: 50% 1% 116%;
     background-color: #FF9346; 
     height: 100vh;
-    background-image: url('background-food_opt.jpg'); 
+    background-image: url("background3.jpg");
+    background-repeat: no-repeat;
+    background-size:cover;
 
  }
 input{
     width:80%; 
-   border-radius: 10px; 
+   border-radius: 5px; 
+   height: 4vh;
+   margin-top: 1vh;
  }
 .submit-button{
-    background-color:white;
+    background-color:#42A9B6;
     border: none;
-    border-radius: 20%;
+    border-radius: 10%;
     padding: 2% 5%;
+    margin-top: 1vh;
 }
 
 .logo{
@@ -30,3 +35,6 @@ input{
     margin: 0 auto;
 }
 
+a {
+    color: #42A9B6
+}

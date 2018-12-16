@@ -7,9 +7,9 @@
   align-content: center;
   margin: 0 auto;
   padding: 50% 1% 116%;
-  background-color: #ff9346;
+  /* background-color: #ff9346; */
   height: 100vh;
-  background-image: url("background-food_opt.jpg");
+  background-image: url("background3.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -31,8 +31,4 @@ input {
   width: 45vw;
   margin: 0 auto;
 }
-/* 
-.form {
-  display: flex;
-  flex-direction: column;
-} */
+
