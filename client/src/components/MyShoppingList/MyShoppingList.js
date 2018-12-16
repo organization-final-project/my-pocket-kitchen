@@ -31,7 +31,7 @@ export default class MyShoppingList extends Component {
       <div>
         <ReusableHeader title={this.state.headerTitle} />
         <Search onSearchChange={e => this.onSearchChange(e)} />
-        <a
+        <a href
           className="button is-primary buttonAdd"
           onClick={e => this.addValue("hola" + e)}
         >
@@ -42,7 +42,7 @@ export default class MyShoppingList extends Component {
           <ul>
             {this.state.MyShoppingList.map(item => {
               console.log(item);
-              return <li>{item}</li>;
+              return <div className="item-shopping-list"><li>{item}</li><i class="fas fa-trash-alt" style={{ fontSize: 15,color: "#42A9B6"}}></i></div> ;
             })}
           </ul>
         </div>

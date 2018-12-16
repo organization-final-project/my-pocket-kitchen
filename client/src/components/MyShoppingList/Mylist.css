@@ -14,3 +14,16 @@
 .button.is-primary{
     background-color: #42A9B6;
 }
+.button.is-primary:hover{
+    background-color: #42A9B6;
+}
+.item-shopping-list{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.fa-trash-alt{
+    margin-left:1.3vw;
+}

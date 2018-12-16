@@ -8,16 +8,16 @@ export default class MyFooter extends Component {
       <div>
         <div className="iconsFooter">
           <Link to="/my-kitchen">
-            <i className="fas fa-utensils" style={{ fontSize: 35,color: "black"}}/>
+            <i className="fas fa-utensils" style={{ fontSize: 32,color: "black"}}/>
           </Link>
           <Link to="/recipes">
-          <i className="fas fa-book" style={{ fontSize: 35,color: "black"}}></i>
+          <i className="fas fa-book" style={{ fontSize: 32,color: "black"}}></i>
           </Link>
           <Link to="/my-shopping-list">
-          <i className="fas fa-shopping-cart" style={{ fontSize: 35, color: "black"}}></i>
+          <i className="fas fa-shopping-cart" style={{ fontSize: 32, color: "black"}}></i>
           </Link>
           <Link to="/my-profile">
-          <i className="fas fa-user" style={{ fontSize: 35,color: "black"}}></i>
+          <i className="fas fa-user" style={{ fontSize: 32,color: "black"}}></i>
           </Link>
         </div>
       </div>
