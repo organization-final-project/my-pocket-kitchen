@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import MyFooter from "../Footer/MyFooter";
 import Search from "../search/Search";
-import Logout from "../auth/Logout";
 import ReusableHeader from "../ReusableHeader/ReusableHeader";
-import CardKitchen from "./CardKitchen";
 import "./MyKitchen.css";
 
 export default class MyKitchen extends Component {
@@ -11,64 +9,85 @@ export default class MyKitchen extends Component {
     super();
     this.headerTitle = "My kitchen";
     this.state = {
-      listIngredients: [],
-      searchItem: undefined
+      listIngredients: []
     };
-    this.addItem = this.addItem.bind(this);
   }
 
-  onSearchChange(search) {
-    console.log(search);
+  onSearchChange = search => {
+    let ingredients = [...this.state.listIngredients];
+    ingredients.push( search );
 
-    // this.setState({...this.state, searchItem: search})
+    this.setState({  });
+    console.log(ingredients);
+  };
+//con listIngredients no funciona
+
+
+
+  addItem() {
+
+
   }
 
-  addItem(e) {
-    e.preventDefault();
 
-    // let search = this.state.searchItem
-
-    // axios.post(apiURL, {searchedItem: search})
-
-    //todo: recuerda que luego vas a tener que leer via axios.get esta asociacion que estas creando entre usuario y elemento de busqueda. asi ccuando recargues la aplicacion podras cargar arroz directamente y te saldra (esto se llama persistencia)
-    //esto se cubra en la parte de autenticacion / session ya que mi session id la puedes usar para saber quien soy yo, mi userid y asociar mi userid a un searchitem como arroz
-    //esto debe de poder ser solicitado / interrogado desde el front via axios.get 
-
-
-
-
-
-
-    // const list = this.state.listIngredients;
-    // const newIngredient = document.getElementById("addInput");
-    // const form = document.getElementById("addItemForm");
-
-    // if (newIngredient.value != "") {
-    //   list.push(newIngredient.value);
-
-    //   this.setState({
-    //     listIngredients: list
-    //   });
-    //   newIngredient.classList.remove("is-danger");
-    //   form.reset();
-    // } else {
-    //   newIngredient.classList.add("is-danger");
-    // }
-  }
 
   render() {
+    console.log(this.state)
     return (
       <div>
         <ReusableHeader title={this.headerTitle} />
         <div className="searchButton">
           <Search onSearchChange={this.onSearchChange} />
-          <a class="button is-primary buttonAdd" onClick={this.addItem}>
-            Add
-          </a>
         </div>
 
-        <CardKitchen />
-        {/* <Logout/> */}
+        <div className="checkboxKitchen">
+          <input type="checkbox" name="list" id="" value="Fridge" />
+          Fridge
+          <input type="checkbox" name="list" id="" value="Pantry" />
+          Pantry
+        </div>
+
+        <a class="button is-primary buttonAdd">Add</a>
+        <div className="tabs is-centered">
+          <ul>
+            {/* <li className="is-active"> */}
+            <li className="non-active">
+              <a>
+                <span className="icon is-small">
+                  <img
+                    src="fridge.png"
+                    alt=""
+                    style={{ width: 200, height: 30 }}
+                  />
+                  {/* <i className="fas fa-image" aria-hidden="true" /> */}
+                </span>
+                <span>Fridge</span>
+              </a>
+            </li>
+            <div className="listFridge">
+              <ul>{/* <li>{this.props.list}</li> */}</ul>
+            </div>
+
+            <li>
+              <a>
+                <span className="icon is-small">
+                  <img
+                    src="pantry.png"
+                    alt=""
+                    style={{ width: 200, height: 30 }}
+                  />
+                  {/* <i className="fas fa-music" aria-hidden="true" /> */}
+                </span>
+                <span>Pantry</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        {this.state.listIngredients.map(element => {
+          return <p>{element}</p>;
+        })}
+
         <MyFooter />
       </div>
     );

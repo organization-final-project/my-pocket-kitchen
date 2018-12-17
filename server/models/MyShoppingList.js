@@ -3,7 +3,6 @@ const Schema   = mongoose.Schema;
 
 const MyShoppingList = new Schema({
   nameIngredient: String,
-  typeStorage: {type:String ,enum: ["fridge", "pantry"]},
   idUser: { type: Schema.Types.ObjectId, ref:'User'}
 }, {
   timestamps: {
