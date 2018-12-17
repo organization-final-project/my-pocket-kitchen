@@ -1,6 +1,6 @@
 .delete-profile{
    position:relative;
-   top:400px;
+   top:200px;
    display: flex;
    flex-direction: column;
 }
