@@ -9,51 +9,78 @@ export default class MyKitchen extends Component {
     super();
     this.headerTitle = "My kitchen";
     this.state = {
-      listIngredients: []
+      listIngPantry: ["pantry"],
+      listIngFridge: ["fridge"]
     };
   }
 
-  onSearchChange = search => {
-    let ingredients = [...this.state.listIngredients];
-    ingredients.push( search );
-
-    this.setState({  });
-    console.log(ingredients);
+  onSearchChange = event => {
+    document.getElementsByClassName("searchIngKitchen").innerHTML = event;
   };
-//con listIngredients no funciona
 
+  addItem = () => {
+    let itemSearch = document.getElementsByClassName("searchIngKitchen")
+      .innerHTML;
+    let checkedFridge = document.getElementById("checkFridge");
+    let checkedPantry = document.getElementById("checkPantry");
 
+    if (checkedFridge.checked) {
+      this.state.listIngFridge.push(itemSearch);
+      this.setState({ ...this.state, listIngPantry: this.state.listIngPantry });
+      
+    } else if (checkedPantry.checked) {
+      this.state.listIngPantry.push(itemSearch);
 
-  addItem() {
+      this.setState({ ...this.state, listIngFridge: this.state.listIngFridge });
 
+    }
+  };
 
-  }
+  deleteItem = e => {
+    let indexRemoveFridge = this.state.listIngFridge;
+    indexRemoveFridge.splice(e, 1);
+    this.setState({ ...this.state, listIngFridge: this.state.listIngFridge });
 
-
+    let indexRemovePantry = this.state.listIngPantry;
+    indexRemovePantry.splice(e, 1);
+    this.setState({ ...this.state, listIngPantry: this.state.listIngPantry });
+  };
 
   render() {
-    console.log(this.state)
     return (
       <div>
         <ReusableHeader title={this.headerTitle} />
-      
-          <Search onSearchChange={this.onSearchChange} />
-          <a class="button is-primary buttonAdd" onClick={this.addItem}>
-            Add
-          </a>
-    
+
+        <Search onSearchChange={search => this.onSearchChange(search)} />
 
         <div className="checkboxKitchen">
-          <input type="checkbox" name="list" id="" value="Fridge" />
+          <input
+            type="checkbox"
+            name="list"
+            id="checkFridge"
+            value="Fridge"
+            onCLick={e => this.clickCheckbox(e)}
+          />
           Fridge
-          <input type="checkbox" name="list" id="" value="Pantry" />
+          <input
+            type="checkbox"
+            name="list"
+            id="checkPantry"
+            value="Pantry"
+            onCLick={e => this.clickCheckbox(e)}
+          />
           Pantry
         </div>
 
-        <a class="button is-primary buttonAdd">Add</a>
+        <a
+          class="button is-primary buttonAdd"
+          onClick={event => this.addItem(event)}
+        >
+          Add
+        </a>
         <div className="tabs is-centered">
           <ul>
-            {/* <li className="is-active"> */}
+          {/* <li className="is-active"> */}
             <li className="non-active">
               <a>
                 <span className="icon is-small">
@@ -67,9 +94,7 @@ export default class MyKitchen extends Component {
                 <span>Fridge</span>
               </a>
             </li>
-            <div className="listFridge">
-              <ul>{/* <li>{this.props.list}</li> */}</ul>
-            </div>
+            <div className="listPantry" />
 
             <li>
               <a>
@@ -84,12 +109,47 @@ export default class MyKitchen extends Component {
                 <span>Pantry</span>
               </a>
             </li>
+            <div className="listFridge" />
           </ul>
         </div>
 
-        {this.state.listIngredients.map(element => {
-          return <p>{element}</p>;
-        })}
+        <section className="sectionIngredient">
+          <div className="FridgeIgredient">
+            <div>
+              {this.state.listIngFridge.map((element, index) => {
+                return (
+                  <li class="listElem">
+                    {element}
+                    <i
+                      className="fas fa-trash-alt"
+                      style={{ fontSize: 15, color: "#42A9B6" }}
+                      onClick={e => this.deleteItem(index)}
+                      key={index}
+                    />
+                  </li>
+                );
+              })}
+            </div>
+          </div>
+
+          <div className="PantryIngredient">
+            <div>
+              {this.state.listIngPantry.map((element, index) => {
+                return (
+                  <li class="listElem">
+                    {element}
+                    <i
+                      className="fas fa-trash-alt"
+                      style={{ fontSize: 15, color: "#42A9B6" }}
+                      onClick={e => this.deleteItem(index)}
+                      key={index}
+                    />
+                  </li>
+                );
+              })}
+            </div>
+          </div>
+        </section>
 
         <MyFooter />
       </div>

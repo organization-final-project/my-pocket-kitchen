@@ -17,7 +17,7 @@ export default class Search extends Component {
           <form className="form" id="addItemForm">
           <div className="control">
             <input
-              className="input is-hovered searchBar"
+              className="input is-hovered searchBar searchIngKitchen"
               type="text"
               placeholder="Search..."
               onChange={this.changeHandler}
