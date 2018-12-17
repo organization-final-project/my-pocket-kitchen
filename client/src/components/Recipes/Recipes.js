@@ -36,7 +36,6 @@ export default class Recipes extends Component {
 
 
   render() {
-    console.log('the state is ---->' + this.state)
     return (
       <div>
        <ReusableHeader title={this.headerTitle}  />

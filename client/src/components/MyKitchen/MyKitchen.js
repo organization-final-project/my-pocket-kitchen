@@ -32,7 +32,6 @@ export default class MyKitchen extends Component {
 
 
   render() {
-    console.log(this.state)
     return (
       <div>
         <ReusableHeader title={this.headerTitle} />

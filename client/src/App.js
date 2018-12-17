@@ -44,6 +44,11 @@ class App extends Component {
   componentWillMount() {
     this.fetchUser();
   }
+  
+  isInPageSection(){
+    let activeSection =document.getElementsByClassName('fas-footer');
+    activeSection.add("isActive");
+  }
 
   render() {
     if (this.state.user) {
@@ -51,7 +56,7 @@ class App extends Component {
         <div className="App">
           {this.state.user.username}
           <Switch>
-            <Route path="/my-kitchen" component={MyKitchen} />
+            <Route path="/my-kitchen" component={MyKitchen} isInPage={this.isInPageSection}/>
             <Route path="/recipes" component={Recipes} />
             <Route path="/my-shopping-list" component={MyShoppingList} />
             <Route path="/my-profile" component={MyProfile} />

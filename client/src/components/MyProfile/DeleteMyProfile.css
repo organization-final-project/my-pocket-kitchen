@@ -1,0 +1,21 @@
+.delete-profile{
+   position:relative;
+   top:400px;
+   display: flex;
+   flex-direction: column;
+}
+
+p{
+    width: 50%;
+    margin:0 auto;
+    font-style: italic;
+    
+}
+.deleteButton{
+    width:40vw;
+    margin: 0 auto;
+    margin-bottom: 1vh;
+}
+p, a, i{
+    margin-bottom: 1vh;
+}

@@ -11,7 +11,7 @@ export default class Search extends Component {
       <div>
         <div className="search">
           <span style={{ fontSize: 38, color: "black" }}>
-            <i class="fas fa-search" />
+            <i className="fas fa-search" />
           </span>
          
           <form className="form" id="addItemForm">
