@@ -12,7 +12,7 @@ export default class MyProfile extends Component {
     return (
       <div>
          <ReusableHeader title={this.headerTitle} />
-        
+   
 
         <MyFooter />
       </div>

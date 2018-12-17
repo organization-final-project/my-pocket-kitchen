@@ -15,25 +15,29 @@ export default class MyShoppingList extends Component {
   }
 
   onSearchChange = (e) => {
-    console.log(e)
+    document.getElementsByClassName('searchBar').innerHTML = e
   };
 
   addValue = (e) => {
-    let MyShoppingList = [...this.state.MyShoppingList];
-    MyShoppingList.push(e);
-    console.log(this)
-    this.setState({ MyShoppingList });
+    let valueOfSearch = document.getElementsByClassName('searchBar').innerHTML
+    this.state.MyShoppingList.push(valueOfSearch);
+    console.log(this.state.MyShoppingList)
+    this.setState({...this.state, MyShoppingList: this.state.MyShoppingList});
     //e.preventDefault();
   };
+
+  removeItem = (e) => {
+
+}
 
   render() {
     return (
       <div>
         <ReusableHeader title={this.state.headerTitle} />
-        <Search onSearchChange={e => this.onSearchChange(e)} />
+        <Search  onSearchChange={e => this.onSearchChange(e)} />
         <a href
           className="button is-primary buttonAdd"
-          onClick={e => this.addValue("hola" + e)}
+          onClick={e => this.addValue()}
         >
           Add
         </a>
