@@ -7,6 +7,9 @@
     background-color: #42A9B6;
     color:black;
     padding: 1%;
+    position: fixed;
+    width: 100vw;
+    z-index: 1;
 }
 .header img {
     height: 6vh;

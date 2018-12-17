@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import AuthService from './AuthService';
 import { Link } from "react-router-dom";
 import './Login.css'
+import CardInformation from './CardInformation'
 
 export default class Login extends Component {
   constructor() {
@@ -43,9 +44,10 @@ export default class Login extends Component {
         
         <button className="submit-button"  onClick={()=>this.props.getUser(this.state)} value= "Login"    >Submit</button>
         <button className="btn" type="button">
-          <Link to="/signup">Or sign up</Link>
+          <Link to="/signup"><u>Or sign up</u></Link>
         </button>
       </form>
+      <CardInformation />
     </div>
     )
   }

@@ -4,6 +4,7 @@ import ReusableHeader from "../ReusableHeader/ReusableHeader";
 import MyFooter from "../Footer/MyFooter";
 import CardRecipe from "./CardRecipe"
 import axios from 'axios';
+import './CardRecipe.css'
 
 export default class Recipes extends Component {
   constructor() {
@@ -16,7 +17,8 @@ export default class Recipes extends Component {
  
 
   }
-     onSearchChange = (e) => {
+
+  onSearchChange = (e) => {
    
     if(e.length>4){
 
@@ -44,7 +46,7 @@ export default class Recipes extends Component {
             return <CardRecipe name={recipe.recipeDetails.name} img={recipe.recipeDetails.img} ing={recipe.recipeDetails.ingredients}/>
          
           
-          }) : <p>Busca receta por ingrediente</p>}
+          }) : <p className="search-instruction">Search recipe by ingredient...</p>}
         
         <MyFooter/>
          

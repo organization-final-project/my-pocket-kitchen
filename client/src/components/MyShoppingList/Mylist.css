@@ -2,3 +2,39 @@
     color:#42A9B6;
     font-size:1.2rem;
 }
+
+.buttonAdd{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 8vh 20vh 4vh 20vh;
+}
+
+.button.is-primary{
+    background-color: #42A9B6;
+}
+.button.is-primary:hover{
+    background-color: #42A9B6;
+}
+.item-shopping-list{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.fa-trash-alt{
+    margin-left:1.3vw;
+}
+
+.fa-pencil-alt{
+    margin-left:1.3vw;
+    margin-bottom:0.8vh;
+    color:black;
+}
+.title-my-list{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+}

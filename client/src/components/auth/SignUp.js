@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import AuthService from "./AuthService";
 import { Redirect } from "react-router-dom";
 import { Link } from "react-router-dom";
+import CardInformation from './CardInformation'
 
 export default class Signup extends Component {
   constructor(props) {
@@ -61,9 +62,10 @@ export default class Signup extends Component {
       
           <button className="submit-button" onClick={() => this.props.getUser(this.state)} value="Singup">Submit</button>
           <button className="btn" type="button">
-            <Link to="/">Or login</Link>
+            <Link to="/"><u>Or login</u></Link>
           </button>
         </form>
+        <CardInformation />
       </div>
     );
   }

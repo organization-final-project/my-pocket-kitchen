@@ -1,6 +1,23 @@
 .card {
- background-color: yellow;
-  height: 50vh;
+  /* height: 50vh; */
   width : 70vw;
   margin-left: 17vw;
+  position: relative;
+  top: 10vh;
+  padding: 1.5vh;
+  box-shadow: 2px 1px #42A9B6;
+  border: 0.2px solid #42A9B6;
+  margin-bottom: 6px;
+  background-color: rgba(228, 226, 226, 0.178);
+}
+
+.search-instruction{
+  position: relative;
+  top: 10vh;
+}
+h1{
+  font-size: 1.1rem;
+}
+p{
+  font-size: 0.9rem;
 }

@@ -13,14 +13,13 @@ export default class Search extends Component {
           <span style={{ fontSize: 38, color: "black" }}>
             <i class="fas fa-search" />
           </span>
-
          
           <form className="form" id="addItemForm">
           <div className="control">
             <input
-              className="input is-hovered "
+              className="input is-hovered searchBar"
               type="text"
-              placeholder="Search the ingredient"
+              placeholder="Search..."
               onChange={this.changeHandler}
               id= "addInput"
             />

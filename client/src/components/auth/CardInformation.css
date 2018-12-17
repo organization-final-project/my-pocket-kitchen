@@ -1,0 +1,8 @@
+.information-card{
+    width: 60vw;
+    margin: 1vh auto -40vh auto;
+    background-color: rgba(139, 139, 139, 0.363);
+    color:white;
+    padding:3vh 2vw;
+    border-radius: 10px;
+}

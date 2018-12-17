@@ -2,6 +2,8 @@
   display: flex;
   justify-content: center;
   padding: 2vh;
+  position: relative;
+  top: 10vh;
 }
 
 .search input{
