@@ -38,9 +38,6 @@ export default class MyKitchen extends Component {
         <ReusableHeader title={this.headerTitle} />
       
           <Search onSearchChange={this.onSearchChange} />
-          <a class="button is-primary buttonAdd" onClick={this.addItem}>
-            Add
-          </a>
     
 
         <div className="checkboxKitchen">

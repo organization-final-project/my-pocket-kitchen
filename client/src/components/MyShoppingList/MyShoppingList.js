@@ -21,14 +21,17 @@ export default class MyShoppingList extends Component {
   addValue = (e) => {
     let valueOfSearch = document.getElementsByClassName('searchBar').innerHTML
     this.state.MyShoppingList.push(valueOfSearch);
-    console.log(this.state.MyShoppingList)
     this.setState({...this.state, MyShoppingList: this.state.MyShoppingList});
     //e.preventDefault();
   };
 
-  removeItem = (e) => {
+  removeItem = (index) => {
+    let valueOfRemove=this.state.MyShoppingList;
+    valueOfRemove.splice(index,1);
+    this.setState({...this.state, MyShoppingList:this.state.MyShoppingList})
+    
 
-}
+  }
 
   render() {
     return (
@@ -44,9 +47,8 @@ export default class MyShoppingList extends Component {
         <div>
           <div className="title-my-list"><h4 className="title-shopping-list">My shopping list</h4><i class="fas fa-pencil-alt"></i></div>
           <ul>
-            {this.state.MyShoppingList.map(item => {
-              console.log(item);
-              return <div className="item-shopping-list"><li>{item}</li><i class="fas fa-trash-alt" style={{ fontSize: 15,color: "#42A9B6"}}></i></div> ;
+            {this.state.MyShoppingList.map((item, index) => {
+              return <div className="item-shopping-list"><li>{item}</li><i class="fas fa-trash-alt" style={{ fontSize: 15,color: "#42A9B6"}} onClick={e=>this.removeItem(index)} key={index}></i></div> ;
             })}
           </ul>
         </div>
