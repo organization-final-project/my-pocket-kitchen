@@ -27,14 +27,22 @@ input{
     padding: 2% 5%;
     margin-top: 1vh;
     color:#877C73;
+    font-size: 0.9rem;
+
 }
 
 .logo{
     height: 20vh;
     width:40vw;
     margin: 0 auto;
+    position :relative;
+    animation: mymove 2s;
 }
-
 a {
     color: #877C73
 }
+
+@keyframes mymove {
+    from {top: -100px;}
+    to {top: 0px;}
+  }

@@ -1,0 +1,33 @@
+.goOut{
+    margin-bottom: 10vh;
+}
+.delete-profile{
+    position:relative;
+    top:170px;
+    display: flex;
+    flex-direction: column;
+ }
+ 
+ .card-profile{
+     width: 50%;
+     margin:0 auto;
+     
+ } 
+ .deleteButton{
+     width:40vw;
+     margin: 0 auto;
+     margin-bottom: 1vh;
+ }
+ p, a, i{
+     margin-bottom: 1vh;
+ } 
+
+ .go-and-delete{
+    color:red;
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items:baseline;
+    position:relative;
+    top:40vh;
+ }
