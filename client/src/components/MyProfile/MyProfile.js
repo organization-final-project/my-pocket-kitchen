@@ -20,8 +20,8 @@ export default class MyProfile extends Component {
               href
               className="button is-primary buttonAdd deleteButton"
               style={{
-                color: "#877C73",
-                backgroundColor: "white",
+                color: "white",
+                backgroundColor: "#877C73",
                 border: "1px solid #877C73"
               }}
               onClick={() => this.props.logout()}
@@ -35,7 +35,7 @@ export default class MyProfile extends Component {
           </div>
 
           <div className="delete-profile card-profile">
-            <p>Tired of being productive with your weekly shopping?</p>
+            <p>Tired of being productive?</p>
             <a
               href
               className="button is-primary buttonAdd deleteButton"

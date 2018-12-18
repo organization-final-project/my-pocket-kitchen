@@ -6,7 +6,8 @@ const userSchema = new Schema({
   password: String,
   // email: String,
   listFridge: Array,
-  listPantry: Array
+  listPantry: Array,
+  myShoppingList: Array
 }, {
   timestamps: {
     createdAt: 'created_at',
