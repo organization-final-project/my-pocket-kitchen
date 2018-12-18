@@ -10,8 +10,8 @@ export default class Signup extends Component {
 
     this.state = {
       username: "",
-      password: ""
-      // redirect: false
+      password: "",
+      redirect: false
     };
 
     this.authService = new AuthService();
@@ -21,7 +21,6 @@ export default class Signup extends Component {
     e.preventDefault();
 
     const { username, password } = this.state;
-
     this.authService.signup({ username, password }).then(receivedUser => {
       this.props.getUser(receivedUser);
       this.setState({ username: "", password: "" });
@@ -29,6 +28,7 @@ export default class Signup extends Component {
   };
 
   handleChange = e => {
+    
     const { name, value } = e.target;
 
     this.setState({ [name]: value });
@@ -60,10 +60,10 @@ export default class Signup extends Component {
               onChange={e => this.handleChange(e)}
             />
       
-          <button className="submit-button" onClick={() => this.props.getUser(this.state)} value="Singup">Submit</button>
+          <button type="submit" className="submit-button"  value="Singup">Submit</button>
           <button className="btn" type="button">
             <Link to="/"><u>Or login</u></Link>
-          </button>
+          </button> 
         </form>
         <CardInformation />
       </div>

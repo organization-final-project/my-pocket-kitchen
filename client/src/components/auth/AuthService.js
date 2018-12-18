@@ -19,7 +19,7 @@ class AuthService {
 
   login = (username) => {
     // axios.post("http://localhost:5000/auth/login", {user}, {withCredentials: true})
-    return this.service.post('/auth', username)
+    return this.service.post('/auth/login', username)
     .then(response => response.data)
   }
 

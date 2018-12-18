@@ -8,7 +8,6 @@
     align-content: center;
     margin: 0 auto;
     padding: 50% 1% 116%;
-    background-color: #FF9346; 
     height: 100vh;
     background-image: url("background3.jpg");
     background-repeat: no-repeat;
@@ -22,20 +21,28 @@ input{
    margin-top: 1vh;
  }
 .submit-button{
-    background-color:#42A9B6;
+   background-color: #FFE2C0;
     border: none;
     border-radius: 10%;
     padding: 2% 5%;
     margin-top: 1vh;
-    color:white;
+    color:#877C73;
+    font-size: 0.9rem;
+
 }
 
 .logo{
     height: 20vh;
     width:40vw;
     margin: 0 auto;
+    position :relative;
+    animation: mymove 2s;
+}
+a {
+    color: #877C73
 }
 
-a {
-    color: #42A9B6
-}
+@keyframes mymove {
+    from {top: -100px;}
+    to {top: 0px;}
+  }

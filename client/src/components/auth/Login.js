@@ -38,11 +38,11 @@ export default class Login extends Component {
       <div className="login">
       <img className="logo" src="logo-provisional.png" alt=""/>
       <form className="form" onSubmit={this.handleFormSubmit}>
-        <input type="text" placeholder="Username" className="form__input" onChange={e => this.handleChange(e)} />
-        <input type="password" placeholder="Password" className="form__input" onChange={e => this.handleChange(e)} />
+        <input type="text" name="username" placeholder="Username" className="form__input" onChange={e => this.handleChange(e)} />
+        <input type="password"name="password" placeholder="Password" className="form__input" onChange={e => this.handleChange(e)} />
         
         
-        <button className="submit-button"  onClick={()=>this.props.getUser(this.state)} value= "Login"    >Submit</button>
+        <button  type="submit" className="submit-button" value= "Login">Submit</button>
         <button className="btn" type="button">
           <Link to="/signup"><u>Or sign up</u></Link>
         </button>

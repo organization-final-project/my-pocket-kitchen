@@ -64,8 +64,14 @@ changeMenuPantry = () => {
     return (
       <div>
         <ReusableHeader title={this.headerTitle} />
+<<<<<<< HEAD
 
         <Search onSearchChange={search => this.onSearchChange(search)} />
+=======
+      
+          <Search onSearchChange={this.onSearchChange} />
+    
+>>>>>>> 1bbe6af7f24f28ac0bc3f49d7cd8ae279148949a
 
         <div className="checkboxKitchen">
           <input
@@ -86,6 +92,7 @@ changeMenuPantry = () => {
           Pantry
         </div>
 
+<<<<<<< HEAD
         <a
           class="button is-primary buttonAdd buttonMyKitchen"
           onClick={event => this.addItem(event)}
@@ -97,6 +104,9 @@ changeMenuPantry = () => {
 
 
         
+=======
+        <a className="button is-primary buttonAdd">Add</a>
+>>>>>>> 1bbe6af7f24f28ac0bc3f49d7cd8ae279148949a
         <div className="tabs is-centered">
           <ul>
           {/* <li className="is-active"> */}
