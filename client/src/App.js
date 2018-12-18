@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 // import MyFooter from '../src/Components/Footer/MyFooter';
-import { Route, Switch, Link } from "react-router-dom";
+import { Route, Switch, withRouter } from "react-router-dom";
 import MyKitchen from "./components/MyKitchen/MyKitchen";
 import Recipes from "./components/Recipes/Recipes";
 import MyShoppingList from "./components/MyShoppingList/MyShoppingList";
@@ -28,17 +28,21 @@ class App extends Component {
   fetchUser = () => {
     this.authService
       .loggedin()
-      .then(user => this.setState({ ...this.state, user }));
+      .then(user =>{ 
+        this.setState({ ...this.state, user })});
   };
 
   getUser = user => {
+    this.props.history.push("/");
     this.setState({ ...this.state, user });
   };
+
   logout = () => {
-    console.log("logout");
     this.authService
       .logout()
-      .then(() => this.setState({ ...this.state, user: null }));
+      .then(() => {
+      this.props.history.push("/login");
+      this.setState({ ...this.state, user: null })});
   };
 
   componentWillMount() {
@@ -54,12 +58,12 @@ class App extends Component {
     if (this.state.user) {
       return (
         <div className="App">
-          {this.state.user.username}
+          {/* {this.state.user.username} */}
           <Switch>
             <Route path="/my-kitchen" component={MyKitchen} isInPage={this.isInPageSection}/>
             <Route path="/recipes" component={Recipes} />
             <Route path="/my-shopping-list" component={MyShoppingList} />
-            <Route path="/my-profile" component={MyProfile} />
+            <Route path="/my-profile" render ={()=>  <MyProfile logout = {this.logout}/>} />
             <Route
               exact
               path="/"
@@ -72,6 +76,7 @@ class App extends Component {
               }
             />{" "}
             />
+          
             <Route
               exact
               path="/signup"
@@ -85,25 +90,23 @@ class App extends Component {
             />
           </Switch>
 
-          <button onClick={() => this.logout() && <Redirect to="/" />}>
-            Logout
-          </button>
+         
         </div>
       );
     } else {
+      console.log("bianca y patri y viceversa")
       return (
         <div className="App">
-         <Route path="/my-kitchen" component={MyKitchen} />
-            <Route path="/recipes" component={Recipes} />
-            <Route path="/my-shopping-list" component={MyShoppingList} />
-            <Route path="/my-profile" component={MyProfile} />
-          {/* {welcome} */}
-          {/* <Message user={this.state.user} /> */}
-          {/* <p>bo user 2</p> */}
           <Switch>
             <Route
               exact
               path="/"
+              render={() => <Login getUser={this.getUser} />}
+            />{" "}
+            />
+            <Route
+              exact
+              path="/login"
               render={() => <Login getUser={this.getUser} />}
             />{" "}
             />
@@ -119,4 +122,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withRouter(App);

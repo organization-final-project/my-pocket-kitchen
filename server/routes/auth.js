@@ -35,6 +35,7 @@ router.post("/login", (req, res, next) => {
 router.post("/signup", (req, res, next) => {
   const username = req.body.username;
   const password = req.body.password;
+  console.log(req.body)
  
  
   // const email = req.body.email;
@@ -86,6 +87,7 @@ router.get("/loggedin", (req, res) => {
 
 router.get("/logout", (req, res) => {
   req.logout();
+  console.log("se ha deslogueado")
   res.status(200).json({ message: "Logout" });
 });
 

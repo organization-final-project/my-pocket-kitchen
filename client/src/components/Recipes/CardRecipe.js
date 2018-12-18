@@ -24,7 +24,7 @@ export default class CardRecipe extends Component {
         <h1>{this.props.name}</h1>
         <img src={this.props.img} alt="" style={{height:120}}/>
         {this.props.ing.map(ingredient=>{
-          console.log(ingredient)
+          // console.log(ingredient)
           return <p>{ingredient}</p>
         
         })}

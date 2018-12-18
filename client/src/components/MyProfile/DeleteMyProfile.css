@@ -1,16 +1,15 @@
 .delete-profile{
    position:relative;
-   top:200px;
+   top:170px;
    display: flex;
    flex-direction: column;
 }
 
-p{
+.card-profile{
     width: 50%;
     margin:0 auto;
-    font-style: italic;
     
-}
+} 
 .deleteButton{
     width:40vw;
     margin: 0 auto;
@@ -18,4 +17,4 @@ p{
 }
 p, a, i{
     margin-bottom: 1vh;
-}
+} 

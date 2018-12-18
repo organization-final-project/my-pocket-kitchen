@@ -46,7 +46,7 @@ export default class MyKitchen extends Component {
           Pantry
         </div>
 
-        <a class="button is-primary buttonAdd">Add</a>
+        <a className="button is-primary buttonAdd">Add</a>
         <div className="tabs is-centered">
           <ul>
             {/* <li className="is-active"> */}

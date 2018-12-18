@@ -42,7 +42,7 @@ function allInformationRecipes (arr){
                 ingredients:arr[i].recipe.ingredientLines
             }
         })
-     } console.log(allRecipes.recipesDetails)
+     } 
 
      return allRecipes;
 }

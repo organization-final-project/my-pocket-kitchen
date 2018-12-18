@@ -7,7 +7,6 @@
   align-content: center;
   margin: 0 auto;
   padding: 50% 1% 116%;
-  /* background-color: #ff9346; */
   height: 100vh;
   background-image: url("background3.jpg");
   background-repeat: no-repeat;
@@ -20,7 +19,7 @@ input {
 }
 
 .submit-button {
-  background-color: white;
+  background-color: #FFE2C0;
   border: none;
   border-radius: 20%;
   padding: 2% 5%;
