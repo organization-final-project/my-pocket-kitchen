@@ -9,8 +9,8 @@ export default class MyKitchen extends Component {
     super();
     this.headerTitle = "My kitchen";
     this.state = {
-      listIngPantry: [],
-      listIngFridge: []
+      listIngPantry: ["Pantry"],
+      listIngFridge: ["Fridge"]
     };
   }
 
@@ -45,6 +45,20 @@ export default class MyKitchen extends Component {
     indexRemovePantry.splice(e, 1);
     this.setState({ ...this.state, listIngPantry: this.state.listIngPantry });
   };
+
+
+  changeMenu = () => {
+    let selectedFridge = document.getElementsByClassName('PantryIngredient')
+    selectedFridge[0].style.visibility='hidden' 
+
+   
+   }
+
+changeMenuPantry = () => {
+ let selectedPantry = document.getElementsByClassName('FridgeIngredient')
+    selectedPantry[0].style.visibility='hidden' 
+}
+
 
   render() {
     return (
@@ -87,7 +101,7 @@ export default class MyKitchen extends Component {
           <ul>
           {/* <li className="is-active"> */}
             <li className="non-active">
-              <a>
+              <a className = "menuFridge" onClick ={e => {this.changeMenu()}}>
                 <span className="icon is-small">
                   <img
                     src="fridge.png"
@@ -100,9 +114,9 @@ export default class MyKitchen extends Component {
               </a>
             </li>
             <div className="listPantry" />
-
+        
             <li>
-              <a>
+              <a className = "menuPantry"  onClick ={e => {this.changeMenuPantry()}}>
                 <span className="icon is-small">
                   <img
                     src="pantry.png"
@@ -119,7 +133,7 @@ export default class MyKitchen extends Component {
         </div>
 
         <section className="sectionIngredient">
-          <div className="FridgeIgredient">
+          <div className="FridgeIngredient">
             <div>
               {this.state.listIngFridge.map((element, index) => {
                 return (
