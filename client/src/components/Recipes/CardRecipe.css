@@ -23,3 +23,12 @@ h1{
 p{
   font-size: 0.9rem;
 }
+.save-recipe{
+  border: 1px solid #877C73;
+  border-radius: 5px;
+  padding: 2vw;
+}
+
+/* .card:last-child{
+ margin-bottom:10vh;
+} */
