@@ -9,8 +9,8 @@ export default class MyKitchen extends Component {
     super();
     this.headerTitle = "My kitchen";
     this.state = {
-      listIngPantry: ["pantry"],
-      listIngFridge: ["fridge"]
+      listIngPantry: [],
+      listIngFridge: []
     };
   }
 
@@ -73,11 +73,16 @@ export default class MyKitchen extends Component {
         </div>
 
         <a
-          class="button is-primary buttonAdd"
+          class="button is-primary buttonAdd buttonMyKitchen"
           onClick={event => this.addItem(event)}
         >
           Add
         </a>
+
+        <section class = "bloque">
+
+
+        
         <div className="tabs is-centered">
           <ul>
           {/* <li className="is-active"> */}
@@ -152,7 +157,9 @@ export default class MyKitchen extends Component {
         </section>
 
         <MyFooter />
+     </section>
       </div>
+      
     );
   }
 }
