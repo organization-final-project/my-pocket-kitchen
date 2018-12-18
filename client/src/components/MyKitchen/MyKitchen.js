@@ -47,7 +47,7 @@ export default class MyKitchen extends Component {
   };
 
 
-  changeMenu = () => {
+  changeMenuFrigde = () => {
     let selectedFridge = document.getElementsByClassName('PantryIngredient')
     selectedFridge[0].style.visibility='hidden' 
 
@@ -101,7 +101,7 @@ changeMenuPantry = () => {
           <ul>
           {/* <li className="is-active"> */}
             <li className="non-active">
-              <a className = "menuFridge" onClick ={e => {this.changeMenu()}}>
+              <a className = "menuFridge" onClick ={e => {this.changeMenuFrigde()}}>
                 <span className="icon is-small">
                   <img
                     src="fridge.png"
