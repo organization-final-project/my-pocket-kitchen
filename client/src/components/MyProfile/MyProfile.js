@@ -1,18 +1,21 @@
 import React, { Component } from "react";
 import MyFooter from "../Footer/MyFooter";
-import ReusableHeader from "../ReusableHeader/ReusableHeader";
 import "./MyProfile.css";
 
 export default class MyProfile extends Component {
   constructor(props) {
     super(props);
-    this.headerTitle = "My profile";
+    
   }
+
+componentDidMount=()=>{
+ document.getElementById("title").innerHTML = "My Profile"
+ 
+}
 
   render() {
     return (
       <div>
-        <ReusableHeader title={this.headerTitle} />
         <div className="go-and-delete">
           <div className="delete-profile border card-profile">
             <p>Enough just for now...</p>

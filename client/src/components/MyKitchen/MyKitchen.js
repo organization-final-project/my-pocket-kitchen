@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import MyFooter from "../Footer/MyFooter";
 import Search from "../search/Search";
-import ReusableHeader from "../ReusableHeader/ReusableHeader";
 import "./MyKitchen.css";
+
+
+
 
 export default class MyKitchen extends Component {
   constructor() {
     super();
-    this.headerTitle = "My kitchen";
     this.state = {
       listIngPantry: ["Pantry"],
       listIngFridge: ["Fridge"]
@@ -58,20 +59,16 @@ changeMenuPantry = () => {
  let selectedPantry = document.getElementsByClassName('FridgeIngredient')
     selectedPantry[0].style.visibility='hidden' 
 }
-
+componentDidMount=()=>{
+  document.getElementById("title").innerHTML = "My Kitchen"
+  
+ }
 
   render() {
     return (
       <div>
-        <ReusableHeader title={this.headerTitle} />
-<<<<<<< HEAD
 
         <Search onSearchChange={search => this.onSearchChange(search)} />
-=======
-      
-          <Search onSearchChange={this.onSearchChange} />
-    
->>>>>>> 1bbe6af7f24f28ac0bc3f49d7cd8ae279148949a
 
         <div className="checkboxKitchen">
           <input
@@ -92,7 +89,6 @@ changeMenuPantry = () => {
           Pantry
         </div>
 
-<<<<<<< HEAD
         <a
           class="button is-primary buttonAdd buttonMyKitchen"
           onClick={event => this.addItem(event)}
@@ -104,9 +100,6 @@ changeMenuPantry = () => {
 
 
         
-=======
-        <a className="button is-primary buttonAdd">Add</a>
->>>>>>> 1bbe6af7f24f28ac0bc3f49d7cd8ae279148949a
         <div className="tabs is-centered">
           <ul>
           {/* <li className="is-active"> */}
@@ -151,7 +144,7 @@ changeMenuPantry = () => {
                     {element}
                     <i
                       className="fas fa-trash-alt"
-                      style={{ fontSize: 15, color: "#42A9B6" }}
+                      style={{ fontSize: 18, color: "#877C73" }}
                       onClick={e => this.deleteItem(index)}
                       key={index}
                     />
@@ -169,7 +162,7 @@ changeMenuPantry = () => {
                     {element}
                     <i
                       className="fas fa-trash-alt"
-                      style={{ fontSize: 15, color: "#42A9B6" }}
+                      style={{ fontSize: 18, color: "#877C73" }}
                       onClick={e => this.deleteItem(index)}
                       key={index}
                     />

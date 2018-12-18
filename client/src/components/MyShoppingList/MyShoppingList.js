@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import MyFooter from "../Footer/MyFooter";
 import Search from "../search/Search";
-import ReusableHeader from "../ReusableHeader/ReusableHeader";
 import "./Mylist.css";
 
 export default class MyShoppingList extends Component {
@@ -30,11 +29,13 @@ export default class MyShoppingList extends Component {
     valueOfRemove.splice(index, 1);
     this.setState({ ...this.state, MyShoppingList: this.state.MyShoppingList });
   };
-
+  componentDidMount=()=>{
+    document.getElementById("title").innerHTML = "My Shopping List"
+    
+   }
   render() {
     return (
       <div>
-        <ReusableHeader title={this.state.headerTitle} />
         <Search onSearchChange={e => this.onSearchChange(e)} />
         <a
           href
@@ -55,7 +56,7 @@ export default class MyShoppingList extends Component {
                   <li>{item}</li>
                   <i
                     class="fas fa-trash-alt"
-                    style={{ fontSize: 15, color: "#877C73" }}
+                    style={{ fontSize: 18, color: "#877C73" }}
                     onClick={e => this.removeItem(index)}
                     key={index}
                   />

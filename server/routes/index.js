@@ -9,4 +9,6 @@ router.use("/auth", authRoutes);
 
 router.use('/recipes', require('./recipes'))
 
+router.use('/my-kitchen',require('./myKitchenFood'))
+
 module.exports = router;

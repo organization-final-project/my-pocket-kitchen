@@ -1,18 +1,22 @@
+
 .header{
     display:flex;
-    flex-wrap: wrap;
-    flex-direction: column;
+   
+    flex-direction: row;
+    justify-content: space-around;
     align-items: center;
     border-bottom: 2px solid #877C73; 
     background-color: #FFE2C0;
     color:black;
-    padding: 1%;
+    padding: 7%;
     position: fixed;
     width: 100vw;
     z-index: 1;
+    height: 12vh;
 }
 .header img {
     height: 6vh;
     width:7vw;
     padding-top: 3%;
 }
+

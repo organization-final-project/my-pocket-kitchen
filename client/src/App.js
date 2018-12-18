@@ -10,6 +10,7 @@ import Signup from "./components/auth/SignUp";
 import Logout from "./components/auth/Logout";
 import AuthService from "./components/auth/AuthService";
 import { Redirect } from "react-router-dom";
+import ReusableHeader from "./components/ReusableHeader/ReusableHeader";
 // import Message from "./components/Message";
 
 import "./App.css";
@@ -19,17 +20,17 @@ class App extends Component {
     super();
 
     this.state = {
-      user: null
+      user: null,
+   
     };
 
     this.authService = new AuthService();
   }
 
   fetchUser = () => {
-    this.authService
-      .loggedin()
-      .then(user =>{ 
-        this.setState({ ...this.state, user })});
+    this.authService.loggedin().then(user => {
+      this.setState({ ...this.state, user });
+    });
   };
 
   getUser = user => {
@@ -38,32 +39,41 @@ class App extends Component {
   };
 
   logout = () => {
-    this.authService
-      .logout()
-      .then(() => {
+    this.authService.logout().then(() => {
       this.props.history.push("/login");
-      this.setState({ ...this.state, user: null })});
+      this.setState({ ...this.state, user: null });
+    });
   };
 
   componentWillMount() {
     this.fetchUser();
   }
-  
-  isInPageSection(){
-    let activeSection =document.getElementsByClassName('fas-footer');
+
+  isInPageSection() {
+    let activeSection = document.getElementsByClassName("fas-footer");
     activeSection.add("isActive");
   }
+  
 
   render() {
     if (this.state.user) {
       return (
         <div className="App">
+          <ReusableHeader logout={this.logout}  />
+
           {/* {this.state.user.username} */}
           <Switch>
-            <Route path="/my-kitchen" component={MyKitchen} isInPage={this.isInPageSection}/>
+            <Route
+              path="/my-kitchen"
+              component={MyKitchen}
+              isInPage={this.isInPageSection}
+            />
             <Route path="/recipes" component={Recipes} />
             <Route path="/my-shopping-list" component={MyShoppingList} />
-            <Route path="/my-profile" render ={()=>  <MyProfile logout = {this.logout}/>} />
+            <Route
+              path="/my-profile"
+              render={() => <MyProfile logout={this.logout} />}
+            />
             <Route
               exact
               path="/"
@@ -76,7 +86,6 @@ class App extends Component {
               }
             />{" "}
             />
-          
             <Route
               exact
               path="/signup"
@@ -89,12 +98,10 @@ class App extends Component {
               }
             />
           </Switch>
-
-         
         </div>
       );
     } else {
-      console.log("bianca y patri y viceversa")
+      console.log("bianca y patri y viceversa");
       return (
         <div className="App">
           <Switch>

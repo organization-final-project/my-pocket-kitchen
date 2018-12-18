@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Search from "../search/Search";
-import ReusableHeader from "../ReusableHeader/ReusableHeader";
 import MyFooter from "../Footer/MyFooter";
 import CardRecipe from "./CardRecipe"
 import axios from 'axios';
@@ -9,13 +8,10 @@ import './CardRecipe.css'
 export default class Recipes extends Component {
   constructor() {
     super()
-    this.headerTitle= "My recipes";
 
     this.state = {
       recipes: null
     }
- 
-
   }
 
   onSearchChange = (e) => {
@@ -32,12 +28,14 @@ export default class Recipes extends Component {
     }
 
   }
-
+  componentDidMount=()=>{
+    document.getElementById("title").innerHTML = "My Recipes"
+    
+   }
 
   render() {
     return (
       <div>
-       <ReusableHeader title={this.headerTitle}  />
         <Search onSearchChange={this.onSearchChange}/>
         {Array.isArray(this.state.recipes) ? this.state.recipes.map(recipe => {
           //console.log(recipe.recipeDetails.ingredients)
