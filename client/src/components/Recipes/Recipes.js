@@ -30,7 +30,7 @@ export default class Recipes extends Component {
   }
   componentDidMount=()=>{
     document.getElementById("title").innerHTML = "My Recipes"
-    
+    document.getElementById("addInput").placeholder="Search..."
    }
 
   render() {

@@ -11,7 +11,7 @@ export default class MyShoppingList extends Component {
     this.state = {
       userID: this.props.user._id,
       MyShoppingList: this.props.user.myShoppingList,
-      headerTitle: "My shopping lists",
+      headerTitle: "My shopping lists"
       
     };
     this.authService = new AuthService();
@@ -80,7 +80,7 @@ export default class MyShoppingList extends Component {
           href
           className="button is-primary buttonAdd save"
           onClick={()=>{this.addShoppingList()}}>
-          Save
+          Save the list
         </a>
         <MyFooter />
       </div>

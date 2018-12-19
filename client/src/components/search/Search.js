@@ -19,7 +19,7 @@ export default class Search extends Component {
             <input
               className="input is-hovered searchBar searchIngKitchen"
               type="text"
-              placeholder="Search..."
+              placeholder="Add ingredient..."
               onChange={this.changeHandler}
               id= "addInput"
             />

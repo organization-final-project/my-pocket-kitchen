@@ -182,7 +182,7 @@ export default class MyKitchen extends Component {
               </div>
             </div>
           </section>
-                <button  className="button is-primary buttonAdd save" type="submit" onClick={()=>{this.addListToDB()}}> Save The List</button>
+                <a  className="button is-primary buttonAdd save" type="submit" onClick={()=>{this.addListToDB()}}> Save The List</a>
           <MyFooter />
         </section>
       </div>
