@@ -11,5 +11,5 @@ const MyShoppingList = new Schema({
   }
 });
 
-const MyList = mongoose.model('MyIngredient', MyShoppingList);
+const MyList = mongoose.model('MyList', MyShoppingList);
 module.exports = MyList;

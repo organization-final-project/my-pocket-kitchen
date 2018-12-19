@@ -17,17 +17,20 @@
      width:40vw;
      margin: 0 auto;
      margin-bottom: 1vh;
+     color: white;
+    background-color: #877C73;
  }
  p, a, i{
      margin-bottom: 1vh;
  } 
 
  .go-and-delete{
-    color:red;
     display:flex;
     flex-direction: row;
     justify-content: flex-end;
-    align-items:baseline;
     position:relative;
     top:40vh;
+    color:#877C73;
+    padding-top: 6vh;
  }
+

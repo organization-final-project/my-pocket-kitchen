@@ -38,8 +38,7 @@ export default class Recipes extends Component {
       <div>
         <Search onSearchChange={this.onSearchChange}/>
         {Array.isArray(this.state.recipes) ? this.state.recipes.map(recipe => {
-          //console.log(recipe.recipeDetails.ingredients)
-            return <CardRecipe name={recipe.recipeDetails.name} img={recipe.recipeDetails.img} ing={recipe.recipeDetails.ingredients}/>
+            return <CardRecipe name={recipe.recipeDetails.name} img={recipe.recipeDetails.img} ing={recipe.recipeDetails.ingredients} url={recipe.recipeDetails.url}/>
          
           
           }) : <p className="search-instruction">Search recipe by ingredient...</p>}

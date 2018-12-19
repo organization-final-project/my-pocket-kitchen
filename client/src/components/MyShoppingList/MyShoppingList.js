@@ -2,15 +2,19 @@ import React, { Component } from "react";
 import MyFooter from "../Footer/MyFooter";
 import Search from "../search/Search";
 import "./Mylist.css";
+import AuthService from '../auth/AuthService'
 
 export default class MyShoppingList extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
-      MyShoppingList: ["eggs", "lettuce"],
-      headerTitle: "My shopping lists"
+      userID: this.props.user._id,
+      MyShoppingList: this.props.user.myShoppingList,
+      headerTitle: "My shopping lists",
+      
     };
+    this.authService = new AuthService();
   }
 
   onSearchChange = e => {
@@ -28,11 +32,21 @@ export default class MyShoppingList extends Component {
     let valueOfRemove = this.state.MyShoppingList;
     valueOfRemove.splice(index, 1);
     this.setState({ ...this.state, MyShoppingList: this.state.MyShoppingList });
+
+   
   };
+<<<<<<< HEAD
   componentDidMount=()=>{
     document.getElementById("title").innerHTML = "My Shopping List"
     
    }
+=======
+  addShoppingList=()=>{
+    const {MyShoppingList, userID}=this.state
+    this.authService.addShoppingList({MyShoppingList, userID})
+
+  }
+>>>>>>> b50d235c67487fae0e85265db512e4a616db5ba7
   render() {
     return (
       <div>
@@ -65,7 +79,12 @@ export default class MyShoppingList extends Component {
             })}
           </ul>
         </div>
-
+        <a
+          href
+          className="button is-primary buttonAdd save"
+          onClick={()=>{this.addShoppingList()}}>
+          Save
+        </a>
         <MyFooter />
       </div>
     );

@@ -15,14 +15,12 @@ router.post('/', (req,res, next)=>{
 
     axios.get(urlEdemam)
     .then((recipes)=>{
-        // console.log(recipes.data.hits)
+        //  console.log(recipes.data.hits)
         // const recipeName=recipes.data.hits[0].recipe.label
         // const recipeImage=recipes.data.hits[0].recipe.image
         // const recipeIngredients=recipes.data.hits[0].recipe.ingredientLines
         //const allRecipes= recipes.data.hits esta es la ruta general de todas las recetas
         const allRecipes= allInformationRecipes(recipes.data.hits);
-        console.log(recipes.data)
-        console.log(allRecipes)
         res.status(200).json({allRecipes});
        // console.log(allRecipes.recipesDetails)
     })
@@ -39,6 +37,7 @@ function allInformationRecipes (arr){
             recipeDetails:{
                 name: arr[i].recipe.label,
                 img: arr[i].recipe.image,
+                url:arr[i].recipe.url,
                 ingredients:arr[i].recipe.ingredientLines
             }
         })

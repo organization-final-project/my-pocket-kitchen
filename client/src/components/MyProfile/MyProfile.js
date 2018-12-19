@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import MyFooter from "../Footer/MyFooter";
 import "./MyProfile.css";
+import AuthService from '../auth/AuthService'
 
 export default class MyProfile extends Component {
   constructor(props) {
     super(props);
+<<<<<<< HEAD
     
   }
 
@@ -13,6 +15,17 @@ componentDidMount=()=>{
  
 }
 
+=======
+    this.headerTitle = "My profile";
+    
+    this.authService = new AuthService();
+  }
+  
+deleteUser = () =>{
+  this.authService.delete(this.props.user)
+  this.props.logout()
+}
+>>>>>>> b50d235c67487fae0e85265db512e4a616db5ba7
   render() {
     return (
       <div>
@@ -23,8 +36,8 @@ componentDidMount=()=>{
               href
               className="button is-primary buttonAdd deleteButton"
               style={{
-                color: "#877C73",
-                backgroundColor: "white",
+                color: "white",
+                backgroundColor: "#877C73",
                 border: "1px solid #877C73"
               }}
               onClick={() => this.props.logout()}
@@ -38,7 +51,7 @@ componentDidMount=()=>{
           </div>
 
           <div className="delete-profile card-profile">
-            <p>Tired of being productive with your weekly shopping?</p>
+            <p>Tired of being productive?</p>
             <a
               href
               className="button is-primary buttonAdd deleteButton"
@@ -47,6 +60,7 @@ componentDidMount=()=>{
                 backgroundColor: "white",
                 border: "1px solid red"
               }}
+              onClick={() => this.deleteUser()}
             >
               Delete my profile
             </a>

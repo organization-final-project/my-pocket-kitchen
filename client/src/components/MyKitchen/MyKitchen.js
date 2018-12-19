@@ -54,6 +54,7 @@ export default class MyKitchen extends Component {
     let selectedPantry = document.getElementsByClassName("FridgeIngredient");
     selectedPantry[0].style.visibility = "hidden";
   };
+ 
   componentDidMount = () => {
     document.getElementById("title").innerHTML = "My Kitchen";
   };

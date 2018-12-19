@@ -69,11 +69,16 @@ class App extends Component {
               isInPage={this.isInPageSection}
             />
             <Route path="/recipes" component={Recipes} />
+<<<<<<< HEAD
             <Route path="/my-shopping-list" component={MyShoppingList} />
             <Route
               path="/my-profile"
               render={() => <MyProfile logout={this.logout} />}
             />
+=======
+            <Route path="/my-shopping-list" render={()=> <MyShoppingList user={this.state.user}/>}/>
+            <Route path="/my-profile" render ={()=>  <MyProfile user = {this.state.user} logout = {this.logout}/>} />
+>>>>>>> b50d235c67487fae0e85265db512e4a616db5ba7
             <Route
               exact
               path="/"
