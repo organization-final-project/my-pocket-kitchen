@@ -15,6 +15,10 @@
     background-color: #877C73;
 }
 .button.is-primary:hover{
+    background-color: #53CF59;;
+}
+
+.button.is-primary:visited{
     background-color: #877C73;
 }
 .item-shopping-list{
@@ -22,6 +26,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+   
 }
 
 .fa-trash-alt{
@@ -44,4 +49,12 @@ li{
 
 .save{
     margin-bottom: 13vh;
+}
+
+ul{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    margin: 0 auto;
+    width: 10em;
 }

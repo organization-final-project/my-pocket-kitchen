@@ -28,13 +28,13 @@ export default class CardRecipe extends Component {
           return <p>{ingredient}</p>
         
         })}
-       <a href={this.props.url} className="button is-primary buttonAdd deleteButton"
+       <a target="_blank" href={this.props.url} className="button is-primary buttonAdd deleteButton"
               style={{
                 color: "white",
                 backgroundColor: "#877C73",
                 border: "1px solid #877C73"
               }}> How to...?</a>
-       <i className="far fa-heart save-recipe" style={{ fontSize: 15, color: "#877C73" }}> Save it</i>       
+       <i className="far fa-heart save-recipe"> <span className="text-save">Save it</span></i>       
 
         </div>
       </div>

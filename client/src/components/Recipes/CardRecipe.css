@@ -27,8 +27,30 @@ p{
   border: 1px solid #877C73;
   border-radius: 5px;
   padding: 2vw;
+  cursor: pointer;
+  color: "#877C73";
+  font-size: 15
+}
+.save-recipe:hover{
+  background-color:#877C73;
 }
 
+.text-save:hover{
+  color:white;
+}
+.fa-angle-up{
+  font-size:32px;
+  position: absolute;
+  position:fixed;
+  bottom:10vh;
+  right:5vw;
+  cursor:pointer;
+
+}
+.fa-angle-up:hover{
+  color:#FFE2C0;
+  font-size:40px;
+}
 /* .card:last-child{
  margin-bottom:10vh;
 } */

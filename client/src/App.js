@@ -98,7 +98,6 @@ class App extends Component {
         </div>
       );
     } else {
-      console.log("bianca y patri y viceversa");
       return (
         <div className="App">
           <Switch>

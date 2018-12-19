@@ -1,22 +1,40 @@
 
 .header{
     display:flex;
-   
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
     border-bottom: 2px solid #877C73; 
     background-color: #FFE2C0;
     color:black;
-    padding: 7%;
+    padding: 0 3vw;
     position: fixed;
     width: 100vw;
     z-index: 1;
-    height: 12vh;
+    height: 10vh;
 }
 .header img {
-    height: 6vh;
-    width:7vw;
+    /* height: 47px;
+    width: 40px; */
     padding-top: 3%;
 }
 
+
+.left{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+img{
+    margin-right:2vw;
+}
+
+#title{
+    padding-right: 111px;
+    margin-top: 2vh;
+    font-size:1.3rem;
+}
+
+.go-out-header{
+    margin-top: 11vh; 
+}

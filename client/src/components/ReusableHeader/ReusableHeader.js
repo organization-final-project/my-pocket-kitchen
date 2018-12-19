@@ -11,12 +11,14 @@ export default class ReusableHeader extends Component {
     console.log(this.props);
     return (
       <div className="header">
-
-        <img src="cocinero.png" alt="" style={{ height: 50, width: 40}} />
+        <div className="left">
+        <img src="cocinero.png" alt="" style={{ height: 47, width: 38}} />
         <h3 id="title" style={{ paddingRight: 111, marginTop: 16 }}>{this.props.title}</h3>
+        </div>
+      
         <i
-          class="fas fa-sign-out-alt goOut"
-          style={{ fontSize: 32, color: "#877C73", marginTop: 75 }}
+          class="fas fa-sign-out-alt goOut go-out-header"
+          style={{ fontSize: 32, color: "#877C73"}}
           onClick={() => this.props.logout()}
         />
       </div>
