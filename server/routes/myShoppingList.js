@@ -1,11 +1,18 @@
 const express = require('express');
 const router = express.Router();
-const MyShoppingList = require ('../models/MyShoppingList');
+const User = require('../models/User')
 
 
-router.get('/my-shopping-list', (req,res,next)=>{
-    console.log("hola", req.body)
-    const newShoppingList = new MyShoppingList([
-        
-    ])
-})
+
+router.post('/', (req,res,next)=>{
+ 
+ let userID = req.body.userID;
+   let myShoppingList= req.body.MyShoppingList;
+ 
+    User.findOneAndUpdate({_id:userID},{$set:{myShoppingList: myShoppingList}}, {new:true}, function(err,result){
+        console.log(result)
+    })
+    
+});
+   
+module.exports=router;

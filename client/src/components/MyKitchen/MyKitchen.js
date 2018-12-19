@@ -172,6 +172,12 @@ changeMenuPantry = () => {
 
         <MyFooter />
      </section>
+     <a
+          href
+          className="button is-primary buttonAdd save"
+        >
+          Save
+        </a>
       </div>
       
     );

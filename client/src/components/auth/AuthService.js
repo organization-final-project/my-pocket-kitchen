@@ -38,6 +38,17 @@ class AuthService {
     .then(response=> response.data)
   }
   
+  delete = (user) =>{
+    return this.service.get(`myProfile/delete/${user._id}`)
+    .then(response => response.data)
+  }
+
+  addShoppingList = (MyShoppingList)=>{
+   return this.service.post('my-shopping-list/', MyShoppingList)
+  //  .then(response => response.data );
+ 
+   }
+  
 }
 
 export default AuthService;

@@ -2,13 +2,20 @@ import React, { Component } from "react";
 import MyFooter from "../Footer/MyFooter";
 import ReusableHeader from "../ReusableHeader/ReusableHeader";
 import "./MyProfile.css";
+import AuthService from '../auth/AuthService'
 
 export default class MyProfile extends Component {
   constructor(props) {
     super(props);
     this.headerTitle = "My profile";
+    
+    this.authService = new AuthService();
   }
-
+  
+deleteUser = () =>{
+  this.authService.delete(this.props.user)
+  this.props.logout()
+}
   render() {
     return (
       <div>
@@ -44,6 +51,7 @@ export default class MyProfile extends Component {
                 backgroundColor: "white",
                 border: "1px solid red"
               }}
+              onClick={() => this.deleteUser()}
             >
               Delete my profile
             </a>
