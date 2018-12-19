@@ -28,11 +28,14 @@ export default class MyKitchen extends Component {
     if (checkedFridge.checked) {
       this.state.listIngFridge.push(itemSearch);
       this.setState({ ...this.state, listIngPantry: this.state.listIngPantry });
+      checkedFridge.checked = false
     } else if (checkedPantry.checked) {
       this.state.listIngPantry.push(itemSearch);
-
       this.setState({ ...this.state, listIngFridge: this.state.listIngFridge });
+      checkedPantry.checked = false
     }
+
+  
   };
 
   deleteItem = e => {
@@ -45,16 +48,19 @@ export default class MyKitchen extends Component {
     this.setState({ ...this.state, listIngPantry: this.state.listIngPantry });
   };
 
-  changeMenuFrigde = () => {
-    let selectedFridge = document.getElementsByClassName("PantryIngredient");
-    selectedFridge[0].style.visibility = "hidden";
-  };
+changeMenu = (e) => {
 
-  changeMenuPantry = () => {
-    let selectedPantry = document.getElementsByClassName("FridgeIngredient");
-    selectedPantry[0].style.visibility = "hidden";
-  };
- 
+if(e.target.innerHTML === "Fridge") {
+  document.getElementsByClassName("PantryIngredient")[0].style.display = "none";
+  
+  document.getElementsByClassName("FridgeIngredient")[0].style.display = "block";
+} else {
+  document.getElementsByClassName("PantryIngredient")[0].style.display = "block";
+  
+  document.getElementsByClassName("FridgeIngredient")[0].style.display = "none";
+}
+}
+
   componentDidMount = () => {
     document.getElementById("title").innerHTML = "My Kitchen";
   };
@@ -102,13 +108,14 @@ export default class MyKitchen extends Component {
         <section class="bloque">
           <div className="tabs is-centered">
             <ul>
-              {/* <li className="is-active"> */}
+             
               <li className="non-active">
                 <a href
                   className="menuFridge"
-                  onClick={e => {
-                    this.changeMenuFrigde();
-                  }}
+                   
+                   onClick={e => {
+                    this.changeMenu(e);
+                   }}
                 >
                   <span className="icon is-small">
                     <img
@@ -116,8 +123,7 @@ export default class MyKitchen extends Component {
                       alt=""
                       style={{ width: 200, height: 30 }}
                     />
-                    {/* <i className="fas fa-image" aria-hidden="true" /> */}
-                  </span>
+                                      </span>
                   <span>Fridge</span>
                 </a>
               </li>
@@ -126,9 +132,9 @@ export default class MyKitchen extends Component {
               <li>
                 <a href
                   className="menuPantry"
-                  onClick={e => {
-                    this.changeMenuPantry();
-                  }}
+                   onClick={e => {
+                     this.changeMenu(e);
+                   }}
                 >
                   <span className="icon is-small">
                     <img
@@ -136,7 +142,7 @@ export default class MyKitchen extends Component {
                       alt=""
                       style={{ width: 200, height: 30 }}
                     />
-                    {/* <i className="fas fa-music" aria-hidden="true" /> */}
+                   
                   </span>
                   <span>Pantry</span>
                 </a>
