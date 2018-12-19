@@ -70,6 +70,7 @@ export default class MyKitchen extends Component {
    
     return (
       <div>
+        
         <Search onSearchChange={search => this.onSearchChange(search)} />
 
         <div className="checkboxKitchen">
@@ -181,7 +182,7 @@ export default class MyKitchen extends Component {
               </div>
             </div>
           </section>
-                <button type="submit" onClick={()=>{this.addListToDB()}}> Save The List</button>
+                <button  className="button is-primary buttonAdd save" type="submit" onClick={()=>{this.addListToDB()}}> Save The List</button>
           <MyFooter />
         </section>
       </div>
