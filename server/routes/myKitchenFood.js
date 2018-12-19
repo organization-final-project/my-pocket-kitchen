@@ -15,23 +15,3 @@ router.post("/", (req, res, next) => {
 
 module.exports = router;
 
-// const {listFridge , listPantry} =req.body;
-// const kitchenFood = new KitchenFood({
-//   listFridge,
-//   listPantry
-
-// });
-
-// kitchenFood.save (err=> {
-//   if(err) {
-//     next(null, false, {
-//       message: kitchenFood.errors
-
-//     });
-//   } else {
-//     res.status(200).json(kitchenFood)
-//   }
-// }
-
-// )
-
