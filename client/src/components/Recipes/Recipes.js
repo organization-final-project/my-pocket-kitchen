@@ -4,6 +4,7 @@ import MyFooter from "../Footer/MyFooter";
 import CardRecipe from "./CardRecipe"
 import axios from 'axios';
 import './CardRecipe.css'
+import './recipes.css'
 
 export default class Recipes extends Component {
   constructor() {
@@ -41,8 +42,10 @@ export default class Recipes extends Component {
             return <CardRecipe name={recipe.recipeDetails.name} img={recipe.recipeDetails.img} ing={recipe.recipeDetails.ingredients} url={recipe.recipeDetails.url}/>
          
           
-          }) : <p className="search-instruction">Search recipe by ingredient...</p>}
+          }) : <p className="search-instruction">Search recipe by ingredient... <img src="coffee.gif" alt="" style ={{ height: 100, width :100 , marginTop: 50}}/></p>}
         
+           
+
         <MyFooter/>
          
        
