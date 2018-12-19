@@ -176,6 +176,7 @@ changeMenuPantry = () => {
           href
           className="button is-primary buttonAdd save"
         >
+
           Save
         </a>
       </div>
