@@ -2,17 +2,17 @@ import React, { Component } from "react";
 import MyFooter from "../Footer/MyFooter";
 import Search from "../search/Search";
 import "./MyKitchen.css";
-
-
-
+import AuthService from "../auth/AuthService";
 
 export default class MyKitchen extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      listIngPantry: ["Pantry"],
-      listIngFridge: ["Fridge"]
+      userID : this.props.user._id,
+      listIngPantry: this.props.user.listPantry,
+      listIngFridge: this.props.user.listFridge
     };
+    this.authService = new AuthService();
   }
 
   onSearchChange = event => {
@@ -28,12 +28,10 @@ export default class MyKitchen extends Component {
     if (checkedFridge.checked) {
       this.state.listIngFridge.push(itemSearch);
       this.setState({ ...this.state, listIngPantry: this.state.listIngPantry });
-      
     } else if (checkedPantry.checked) {
       this.state.listIngPantry.push(itemSearch);
 
       this.setState({ ...this.state, listIngFridge: this.state.listIngFridge });
-
     }
   };
 
@@ -47,27 +45,30 @@ export default class MyKitchen extends Component {
     this.setState({ ...this.state, listIngPantry: this.state.listIngPantry });
   };
 
-
   changeMenuFrigde = () => {
-    let selectedFridge = document.getElementsByClassName('PantryIngredient')
-    selectedFridge[0].style.visibility='hidden' 
+    let selectedFridge = document.getElementsByClassName("PantryIngredient");
+    selectedFridge[0].style.visibility = "hidden";
+  };
 
-   
-   }
+  changeMenuPantry = () => {
+    let selectedPantry = document.getElementsByClassName("FridgeIngredient");
+    selectedPantry[0].style.visibility = "hidden";
+  };
+  componentDidMount = () => {
+    document.getElementById("title").innerHTML = "My Kitchen";
+  };
 
-changeMenuPantry = () => {
- let selectedPantry = document.getElementsByClassName('FridgeIngredient')
-    selectedPantry[0].style.visibility='hidden' 
-}
-componentDidMount=()=>{
-  document.getElementById("title").innerHTML = "My Kitchen"
-  
- }
+  addListToDB = () =>{
+    const { listIngFridge, listIngPantry, userID} = this.state
+
+    this.authService.myKitchen({listIngFridge, listIngPantry, userID})
+  }
+
 
   render() {
+   
     return (
       <div>
-
         <Search onSearchChange={search => this.onSearchChange(search)} />
 
         <div className="checkboxKitchen">
@@ -89,94 +90,100 @@ componentDidMount=()=>{
           Pantry
         </div>
 
-        <a
+        <a href
           class="button is-primary buttonAdd buttonMyKitchen"
           onClick={event => this.addItem(event)}
         >
           Add
         </a>
 
-        <section class = "bloque">
-
-
-        
-        <div className="tabs is-centered">
-          <ul>
-          {/* <li className="is-active"> */}
-            <li className="non-active">
-              <a className = "menuFridge" onClick ={e => {this.changeMenuFrigde()}}>
-                <span className="icon is-small">
-                  <img
-                    src="fridge.png"
-                    alt=""
-                    style={{ width: 200, height: 30 }}
-                  />
-                  {/* <i className="fas fa-image" aria-hidden="true" /> */}
-                </span>
-                <span>Fridge</span>
-              </a>
-            </li>
-            <div className="listPantry" />
-        
-            <li>
-              <a className = "menuPantry"  onClick ={e => {this.changeMenuPantry()}}>
-                <span className="icon is-small">
-                  <img
-                    src="pantry.png"
-                    alt=""
-                    style={{ width: 200, height: 30 }}
-                  />
-                  {/* <i className="fas fa-music" aria-hidden="true" /> */}
-                </span>
-                <span>Pantry</span>
-              </a>
-            </li>
-            <div className="listFridge" />
-          </ul>
-        </div>
-
-        <section className="sectionIngredient">
-          <div className="FridgeIngredient">
-            <div>
-              {this.state.listIngFridge.map((element, index) => {
-                return (
-                  <li class="listElem">
-                    {element}
-                    <i
-                      className="fas fa-trash-alt"
-                      style={{ fontSize: 18, color: "#877C73" }}
-                      onClick={e => this.deleteItem(index)}
-                      key={index}
+        <section class="bloque">
+          <div className="tabs is-centered">
+            <ul>
+              {/* <li className="is-active"> */}
+              <li className="non-active">
+                <a href
+                  className="menuFridge"
+                  onClick={e => {
+                    this.changeMenuFrigde();
+                  }}
+                >
+                  <span className="icon is-small">
+                    <img
+                      src="fridge.png"
+                      alt=""
+                      style={{ width: 200, height: 30 }}
                     />
-                  </li>
-                );
-              })}
-            </div>
+                    {/* <i className="fas fa-image" aria-hidden="true" /> */}
+                  </span>
+                  <span>Fridge</span>
+                </a>
+              </li>
+              <div className="listPantry" />
+
+              <li>
+                <a href
+                  className="menuPantry"
+                  onClick={e => {
+                    this.changeMenuPantry();
+                  }}
+                >
+                  <span className="icon is-small">
+                    <img
+                      src="pantry.png"
+                      alt=""
+                      style={{ width: 200, height: 30 }}
+                    />
+                    {/* <i className="fas fa-music" aria-hidden="true" /> */}
+                  </span>
+                  <span>Pantry</span>
+                </a>
+              </li>
+              <div className="listFridge" />
+            </ul>
           </div>
 
-          <div className="PantryIngredient">
-            <div>
-              {this.state.listIngPantry.map((element, index) => {
-                return (
-                  <li class="listElem">
-                    {element}
-                    <i
-                      className="fas fa-trash-alt"
-                      style={{ fontSize: 18, color: "#877C73" }}
-                      onClick={e => this.deleteItem(index)}
-                      key={index}
-                    />
-                  </li>
-                );
-              })}
+          <section className="sectionIngredient">
+            <div className="FridgeIngredient">
+              <div>
+                {this.state.listIngFridge.map((element, index) => {
+                  return (
+                    <li class="listElem">
+                      {element}
+                      <i
+                        className="fas fa-trash-alt"
+                        style={{ fontSize: 18, color: "#877C73" }}
+                        onClick={e => this.deleteItem(index)}
+                        key={index}
+                      />
+                    </li>
+                  );
+                })}
+              </div>
             </div>
-          </div>
+
+            <div className="PantryIngredient">
+              <div>
+                {this.state.listIngPantry.map((element, index) => {
+                  return (
+                    <li class="listElem">
+                      {element}
+                      <i
+                        className="fas fa-trash-alt"
+                        style={{ fontSize: 18, color: "#877C73" }}
+                        onClick={e => this.deleteItem(index)}
+                        key={index}
+                      />
+                    </li>
+                  );
+                })}
+              </div>
+            </div>
+          </section>
+                <button type="submit" onClick={()=>{this.addListToDB()}}> Save The List</button>
+          <MyFooter />
         </section>
-
-        <MyFooter />
-     </section>
       </div>
-      
     );
   }
 }

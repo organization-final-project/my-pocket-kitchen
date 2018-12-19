@@ -65,7 +65,7 @@ class App extends Component {
           <Switch>
             <Route
               path="/my-kitchen"
-              component={MyKitchen}
+              render={() => <MyKitchen user={this.state.user}/>}
               isInPage={this.isInPageSection}
             />
             <Route path="/recipes" component={Recipes} />

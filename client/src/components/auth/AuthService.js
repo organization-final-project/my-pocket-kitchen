@@ -37,7 +37,17 @@ class AuthService {
     return this.service.get('recipe')
     .then(response=> response.data)
   }
+
+  myKitchen = (shoppingList) => {
+    return this.service.post('my-kitchen',shoppingList)
+    // .then(response => response.data)
+  }
   
 }
 
+
+
 export default AuthService;
+
+
+
