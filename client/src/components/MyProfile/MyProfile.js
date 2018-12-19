@@ -6,26 +6,18 @@ import AuthService from '../auth/AuthService'
 export default class MyProfile extends Component {
   constructor(props) {
     super(props);
-<<<<<<< HEAD
-    
+    this.authService = new AuthService();
   }
 
 componentDidMount=()=>{
  document.getElementById("title").innerHTML = "My Profile"
  
 }
-
-=======
-    this.headerTitle = "My profile";
-    
-    this.authService = new AuthService();
-  }
   
 deleteUser = () =>{
   this.authService.delete(this.props.user)
   this.props.logout()
 }
->>>>>>> b50d235c67487fae0e85265db512e4a616db5ba7
   render() {
     return (
       <div>

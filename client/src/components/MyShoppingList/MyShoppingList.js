@@ -35,18 +35,15 @@ export default class MyShoppingList extends Component {
 
    
   };
-<<<<<<< HEAD
   componentDidMount=()=>{
     document.getElementById("title").innerHTML = "My Shopping List"
     
    }
-=======
   addShoppingList=()=>{
     const {MyShoppingList, userID}=this.state
     this.authService.addShoppingList({MyShoppingList, userID})
 
   }
->>>>>>> b50d235c67487fae0e85265db512e4a616db5ba7
   render() {
     return (
       <div>
