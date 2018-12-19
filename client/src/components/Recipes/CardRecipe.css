@@ -38,7 +38,19 @@ p{
 .text-save:hover{
   color:white;
 }
+.fa-angle-up{
+  font-size:32px;
+  position: absolute;
+  position:fixed;
+  bottom:10vh;
+  right:5vw;
+  cursor:pointer;
 
+}
+.fa-angle-up:hover{
+  color:#FFE2C0;
+  font-size:40px;
+}
 /* .card:last-child{
  margin-bottom:10vh;
 } */

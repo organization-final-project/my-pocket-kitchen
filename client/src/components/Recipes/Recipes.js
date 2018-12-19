@@ -42,7 +42,7 @@ export default class Recipes extends Component {
          
           
           }) : <p className="search-instruction">Search recipe by ingredient...</p>}
-        
+        <i class="fas fa-angle-up"></i>
         <MyFooter/>
          
        
