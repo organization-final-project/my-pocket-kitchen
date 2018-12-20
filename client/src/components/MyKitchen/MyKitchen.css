@@ -60,7 +60,7 @@ bottom: 13vh;
 }
 
 .activeMenu a{
-color: #877C73 !important;
+color: #877C73 ;
 }
 
 .tabs li.is-active a {
