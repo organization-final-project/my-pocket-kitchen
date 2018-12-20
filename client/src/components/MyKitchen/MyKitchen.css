@@ -73,3 +73,12 @@ color: #877C73 ;
 .colorTextKitchen {
   color: #877C73 
 }
+@media (min-width:700px){
+  .input-checkbox{
+      
+    width: 35%;
+
+   }
+}
+
+

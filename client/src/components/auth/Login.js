@@ -37,7 +37,7 @@ export default class Login extends Component {
     return (
       <div className="login">
       <img className="logo" src="logo-provisional.png" alt=""/>
-      <form className="form" onSubmit={this.handleFormSubmit}>
+      <form className="form form-login" onSubmit={this.handleFormSubmit}>
         <input type="text" name="username" placeholder="Username" className="form__input" onChange={e => this.handleChange(e)} />
         <input type="password"name="password" placeholder="Password" className="form__input" onChange={e => this.handleChange(e)} />
         
