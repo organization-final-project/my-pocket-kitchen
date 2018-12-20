@@ -1,0 +1,61 @@
+.searchButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* position: relative;
+  top: 20vh; */
+
+  padding: 2vh;
+  position: relative;
+  top: 10vh;
+}
+
+
+.sectionIngredient{
+  display: flex;
+  justify-content: space-around;
+}
+
+.listElem {
+  list-style:none;
+}
+
+/* .buttonAdd {
+  margin: 10% 10% 10% 0%;
+} */
+
+/* .buttonAdd{
+    
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 8vh 20vh 4vh 20vh;
+}
+
+.button.is-primary{
+  background-color: #42A9B6;
+} */
+
+.buttonMyKitchen {
+position: relative;
+bottom: 13vh;
+}
+
+.bloque {
+  position: relative;
+  bottom: 13vh;
+}
+
+
+.PantryIngredient {
+  /* visibility: visible; */
+  display:none;
+}
+
+.checkboxKitchen{
+  color:#877C73;
+}
+.save {
+  margin-bottom: 13vh;
+}
+

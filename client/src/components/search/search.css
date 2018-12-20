@@ -1,0 +1,27 @@
+.search {
+  display: flex;
+  justify-content: center;
+  padding: 2vh;
+  position: relative;
+  top: 10vh;
+}
+
+.search input{
+  margin: 2vh;
+  width: 80%;
+}
+
+.checkboxKitchen {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  height: 80px;
+  padding: 12vh;
+ 
+}
+
+@media (min-width:700px){
+  .search{
+    padding-top: 7vh;
+  }
+} 

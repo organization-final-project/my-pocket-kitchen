@@ -1,0 +1,17 @@
+.search-instruction {
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ 
+}
+
+
+
+
+
+@media (min-width:700px){
+   #go-up{
+       padding:0 6vw 10vh 0;
+    }
+}

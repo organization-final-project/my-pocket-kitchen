@@ -1,0 +1,32 @@
+
+.iconsFooter {
+  height: 70px;
+  display: flex;
+  background-color: #FFE2C0;
+  justify-content: space-around;
+  padding-top: 20px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+   border-top: 2px solid #877C73; 
+   z-index: 1;
+  
+}
+
+
+i:hover{
+  color:white;
+}
+
+
+
+.whiteIcon > i{
+color: white;
+}
+
+
+
+.iconStyle  {
+  font-size: 32px;
+  color: #877C73
+}

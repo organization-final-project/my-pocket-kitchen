@@ -1,0 +1,56 @@
+.card {
+  /* height: 50vh; */
+  width : 70vw;
+  margin-left: 14vw;
+  position: relative;
+  top: 10vh;
+  padding: 1.5vh;
+  box-shadow: 2px 1px #877C73;
+  border: 0.2px solid #877C73;
+  margin-bottom: 6px;
+  background-color: rgba(228, 226, 226, 0.178);
+}
+
+.search-instruction{
+  position: relative;
+  top: 10vh;
+  color:#877C73;
+  font-size: 1.1rem;
+}
+h1{
+  font-size: 1.1rem;
+}
+p{
+  font-size: 0.9rem;
+}
+.save-recipe{
+  border: 1px solid #877C73;
+  border-radius: 5px;
+  padding: 2vw;
+  cursor: pointer;
+  color: "#877C73";
+  font-size: 15
+}
+.save-recipe:hover{
+  background-color:#877C73;
+}
+
+.text-save:hover{
+  color:white;
+}
+.fa-angle-up{
+  font-size:32px;
+  position: absolute;
+  position:fixed;
+  bottom:10vh;
+  right:5vw;
+  cursor:pointer;
+
+}
+.fa-angle-up:hover{
+  color:#FFE2C0;
+  font-size:40px;
+}
+/* .card:last-child{
+ margin-bottom:10vh;
+} */
