@@ -18,7 +18,6 @@ export default class ReusableHeader extends Component {
       
         <i
           class="fas fa-sign-out-alt goOut go-out-header"
-          style={{ fontSize: 32, color: "#877C73"}}
           onClick={() => this.props.logout()}
         />
       </div>

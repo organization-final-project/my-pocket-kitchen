@@ -37,4 +37,11 @@ img{
 
 .go-out-header{
     margin-top: 11vh; 
+    font-size: 32px;
+    color:#877C73;
+}
+
+.go-out-header:hover{
+    color:white;
+    cursor:pointer;
 }
