@@ -21,16 +21,23 @@ export default class Recipes extends Component {
         .post("http://localhost:5000/api/recipes", { search: e })
         .then(res => {
           // console.log('respuesta de mi server', res.data.allRecipes)
+         
           this.setState({ recipes: res.data.allRecipes });
         })
         .catch(err => console.log(err));
     }
   };
   componentDidMount = () => {
+    
     document.getElementById("title").innerHTML = "My Recipes";
     document.getElementById("addInput").placeholder = "Search...";
+ 
   };
 
+ topFunction=()=> {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
   render() {
     return (
       <div>
@@ -56,7 +63,7 @@ export default class Recipes extends Component {
             />
           </p>
         )}
-        <i class="fas fa-angle-up" />
+        <i id="go-up"className="fas fa-angle-up" onClick={()=>this.topFunction()} />
         <MyFooter />
       </div>
     );
