@@ -60,7 +60,7 @@ export default class MyShoppingList extends Component {
             <h4 className="title-shopping-list">My shopping list</h4>
             <i class="fas fa-pencil-alt" />
           </div>
-          <ul>
+          <ul className="list-items">
             {this.state.MyShoppingList.map((item, index) => {
               return (
                 <div className="item-shopping-list">

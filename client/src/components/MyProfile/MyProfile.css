@@ -34,3 +34,11 @@
     padding-top: 6vh;
  }
 
+
+ @media (min-width:700px){
+    .delete-profile{
+        margin-top: -40vh;
+        padding-top:-100vh;
+     }
+    }
+ 
