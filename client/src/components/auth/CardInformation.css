@@ -9,7 +9,7 @@
 
 @media(min-width:700px) {
     .information-card{
-        margin: -230vh 0 -200vh 30vw;
+        margin: -230vh 0 -200vh 20vw;
         width: 30%;
      }
 }

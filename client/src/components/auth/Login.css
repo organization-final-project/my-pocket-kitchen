@@ -49,18 +49,19 @@ a {
 
   @media (min-width:700px){
     .login{
-    background-image: none;
+    background-image: url("background-img-desktop.png");
+    background-color:rgba(241, 212, 192, 0.842);
     margin: 0 auto;
-    /* height: -500px; */
+    padding:0;
     width: 100vw;
      }
      .logo{
          width:20vw;
-         height:26vh;
-         margin:-110vh 0 0 35vw;
+         height:27vh;
+         margin:0vh 0 40vh 25vw;
      }
-     .form{
-         margin: -40vh 15vw 30vh 30vw;
+     .form-login{
+         margin: -40vh 15vw 30vh 20vw;
      }
   
   }
