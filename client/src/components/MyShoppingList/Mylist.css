@@ -58,3 +58,10 @@ li{
     margin: 0 auto;
     width: 10em;
 }
+
+@media (min-width:700px){
+    .save{
+        margin-bottom: 20vh;
+     }
+ }
+ 

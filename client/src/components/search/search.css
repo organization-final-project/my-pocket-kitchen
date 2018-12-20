@@ -19,3 +19,9 @@
   padding: 12vh;
  
 }
+
+@media (min-width:700px){
+  .search{
+    padding-top: 7vh;
+  }
+} 
