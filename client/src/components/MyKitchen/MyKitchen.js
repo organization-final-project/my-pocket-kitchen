@@ -61,9 +61,17 @@ if(e.target.innerHTML === "Fridge") {
 }
 }
 
+
+
+
   componentDidMount = () => {
     document.getElementById("title").innerHTML = "My Kitchen";
+    document.getElementsByClassName("menuFridge").addClass = "colorTextMenu";
+    
   };
+
+ 
+  
 
   addListToDB = () =>{
     const { listIngFridge, listIngPantry, userID} = this.state
@@ -71,7 +79,7 @@ if(e.target.innerHTML === "Fridge") {
     this.authService.myKitchen({listIngFridge, listIngPantry, userID})
   }
 
-
+ 
   render() {
    
     return (
@@ -99,17 +107,17 @@ if(e.target.innerHTML === "Fridge") {
         </div>
 
         <a href
-          class="button is-primary buttonAdd buttonMyKitchen"
+          className="button is-primary buttonAdd buttonMyKitchen"
           onClick={event => this.addItem(event)}
         >
           Add
         </a>
 
-        <section class="bloque">
+        <section className="sectionMenu">
           <div className="tabs is-centered">
             <ul>
              
-              <li className="non-active">
+              <li className="activeMenu">
                 <a href
                   className="menuFridge"
                    
@@ -124,7 +132,7 @@ if(e.target.innerHTML === "Fridge") {
                       style={{ width: 200, height: 30 }}
                     />
                                       </span>
-                  <span>Fridge</span>
+                  <span className= "colorTextKitchen">Fridge</span>
                 </a>
               </li>
               <div className="listPantry" />
@@ -144,7 +152,7 @@ if(e.target.innerHTML === "Fridge") {
                     />
                    
                   </span>
-                  <span>Pantry</span>
+                  <span className= "colorTextKitchen">Pantry</span>
                 </a>
               </li>
               <div className="listFridge" />

@@ -41,7 +41,7 @@ position: relative;
 bottom: 13vh;
 }
 
-.bloque {
+.sectionMenu {
   position: relative;
   bottom: 13vh;
 }
@@ -59,3 +59,17 @@ bottom: 13vh;
   margin-bottom: 13vh;
 }
 
+.activeMenu a{
+color: #877C73 !important;
+}
+
+.tabs li.is-active a {
+  border-bottom-color: black;
+}
+
+.colorTextMenu {
+  color: black;
+}
+.colorTextKitchen {
+  color: #877C73 
+}
