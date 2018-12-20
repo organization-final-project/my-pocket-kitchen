@@ -18,7 +18,7 @@ export default class Recipes extends Component {
   onSearchChange = e => {
     if (e.length > 4) {
       axios
-        .post("http://localhost:5000/api/recipes", { search: e })
+        .post(`${process.env.REACT_APP_API_URL}/recipes`, { search: e })
         .then(res => {
           // console.log('respuesta de mi server', res.data.allRecipes)
          
