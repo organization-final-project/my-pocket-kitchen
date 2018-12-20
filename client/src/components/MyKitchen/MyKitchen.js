@@ -80,7 +80,7 @@ if(e.target.innerHTML === "Fridge") {
         <Search onSearchChange={search => this.onSearchChange(search)} />
 
         <div className="checkboxKitchen">
-          <input
+          <input className="input-checkbox"
             type="checkbox"
             name="list"
             id="checkFridge"
@@ -88,7 +88,7 @@ if(e.target.innerHTML === "Fridge") {
             onCLick={e => this.clickCheckbox(e)}
           />
           Fridge
-          <input
+          <input className="input-checkbox"
             type="checkbox"
             name="list"
             id="checkPantry"

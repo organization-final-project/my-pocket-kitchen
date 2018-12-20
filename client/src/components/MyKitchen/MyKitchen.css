@@ -60,10 +60,11 @@ bottom: 13vh;
 }
 
 @media (min-width:700px){
-  .input{
+  .input-checkbox{
       
     width: 35%;
 
    }
 }
+
 

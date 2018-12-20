@@ -6,3 +6,10 @@
     padding:3vh 2vw;
     border-radius: 10px;
 }
+
+@media(min-width:700px) {
+    .information-card{
+        margin: -230vh 0 -200vh 30vw;
+        width: 30%;
+     }
+}

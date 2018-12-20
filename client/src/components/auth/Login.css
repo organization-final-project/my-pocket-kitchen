@@ -46,3 +46,24 @@ a {
     from {top: -100px;}
     to {top: 0px;}
   }
+
+  @media (min-width:700px){
+    .login{
+    background-image: none;
+    margin: 0 auto;
+    /* height: -500px; */
+    width: 100vw;
+     }
+     .logo{
+         width:20vw;
+         height:26vh;
+         margin:-110vh 0 0 35vw;
+     }
+     .form{
+         margin: -40vh 15vw 30vh 30vw;
+     }
+  
+  }
+  
+
+  
