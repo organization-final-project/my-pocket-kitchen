@@ -9,10 +9,10 @@ class AuthService {
   }
 
   signup = (username) => {
-   
+   console.log(process.env)
     //  axios.post("/signup", {user}, {withCredentials: true})
-    console.log(username)
-    return this.service.post('auth/signup', username)
+    
+    return this.service.post('/auth/signup', username)
     .then(response => response.data)
     .catch(e => console.log(e))
   }
@@ -24,12 +24,12 @@ class AuthService {
   }
 
   loggedin = () => {
-    return this.service.get('auth/loggedin')
+    return this.service.get('/auth/loggedin')
     .then(response => response.data);
   }
 
   logout = () => {
-    return this.service.get('auth/logout')
+    return this.service.get('/auth/logout')
     .then(response => response.data);
   }
 
@@ -50,8 +50,10 @@ class AuthService {
 
   addShoppingList = (MyShoppingList)=>{
    return this.service.post('my-shopping-list/', MyShoppingList)
-  //  .then(response => response.data );
- 
+   }
+   addFavoriteRecipe = (recipe, user) => {
+     let info = {recipe, user}
+     return this.service.post('favorite',info)
    }
   
 }

@@ -6,6 +6,7 @@
     "axios": "^0.18.0",
     "bulma": "^0.7.2",
     "bulma-extensions": "^4.0.0",
+    "dotenv-cli": "^1.4.0",
     "react": "^16.6.3",
     "react-bulma-components": "^2.3.0",
     "react-dom": "^16.6.3",
@@ -13,7 +14,7 @@
     "react-scripts": "2.1.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "dotenv -e .env.development react-scripts start",
     "build-dev": "dotenv -e .env.development react-scripts build",
     "build-prod": "dotenv -e .env.production react-scripts build",
     "build": "react-scripts build",

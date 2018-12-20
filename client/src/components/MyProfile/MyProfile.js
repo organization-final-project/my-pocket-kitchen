@@ -1,24 +1,29 @@
 import React, { Component } from "react";
 import MyFooter from "../Footer/MyFooter";
 import "./MyProfile.css";
-import AuthService from '../auth/AuthService'
+import AuthService from "../auth/AuthService";
 
 export default class MyProfile extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      favRecipes: null
+    };
     this.authService = new AuthService();
   }
 
-componentDidMount=()=>{
- document.getElementById("title").innerHTML = "My Profile"
- 
-}
-  
-deleteUser = () =>{
-  this.authService.delete(this.props.user)
-  this.props.logout()
-}
+  componentDidMount = () => {
+    document.getElementById("title").innerHTML = "My Profile";
+  };
+  componentWillMount = () => {
+    this.setState({ ...this.state, favRecipes: this.props.user.favRecipes });
+  };
+  deleteUser = () => {
+    this.authService.delete(this.props.user);
+    this.props.logout();
+  };
   render() {
+    console.log(this.state.favRecipes);
     return (
       <div>
         <div className="go-and-delete">
@@ -41,7 +46,12 @@ deleteUser = () =>{
               style={{ fontSize: 32, color: "#877C73" }}
             />
           </div>
-
+          <div>
+            <h1>This are your favorite Recipes</h1>
+            {this.state.favRecipes.map(element => {
+              return <h1>{element.name}</h1>;
+            })}
+          </div>
           <div className="delete-profile card-profile">
             <p>Tired of being productive?</p>
             <a
