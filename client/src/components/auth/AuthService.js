@@ -9,7 +9,7 @@ class AuthService {
   }
 
   signup = (username) => {
-   
+   console.log(process.env.REACT_APP_API_URL)
     //  axios.post("/signup", {user}, {withCredentials: true})
     console.log(username)
     return this.service.post('auth/signup', username)
