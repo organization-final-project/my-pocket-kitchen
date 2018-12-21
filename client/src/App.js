@@ -64,7 +64,7 @@ class App extends Component {
               render={() => <MyKitchen user={this.state.user}/>}
              
             />
-            <Route path="/recipes" component={Recipes} />
+            <Route path="/recipes" render={()=> <Recipes user = {this.state.user}/>} />
             <Route path="/my-shopping-list" render={()=> <MyShoppingList user={this.state.user}/>}/>
             <Route path="/my-profile" render ={()=>  <MyProfile user = {this.state.user} logout = {this.logout}/>} />
             <Route

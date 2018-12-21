@@ -5,12 +5,20 @@
     position:relative;
     top:170px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    position: fixed;
+    justify-content: space-between;
+    background-color:white;
+    padding:2vh;
+    align-items: center;
+    border-top: 2px solid #877C73;
+   
  }
  
  .card-profile{
-     width: 50%;
+     width: 100vw;
      margin:0 auto;
+     margin-top: 58vh;
      
  } 
  .deleteButton{
@@ -34,11 +42,66 @@
     padding-top: 6vh;
  }
 
+.title-fav-recipes{
+    padding-top: 15vh;
+    width: 100vw;
+    margin-bottom: 2vh;
+    font-size:1.3rem;   
+    color:#877C73;
+   
+}
+
+.card-fav-recipe{
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid #877C73;
+    width: 80vw;
+    margin: 0 auto 1vh auto; 
+    justify-content: space-between;
+    padding: 1vh;
+}
+.card-fav-recipe h3{
+    width: 30vw;
+    margin-bottom:2vh;
+}
+
+.button-go-fav-recipes{
+    background-color:#877C73;
+    color:white;
+    padding:1vh;
+    border-radius: 5px;
+}
+.button-go-fav-recipes:hover{
+    background-color:white;
+    border:1px solid #877C73;
+    color:#877C73;
+}
+i#go-up-my-profile{
+    position: fixed;
+    top: 75vh;
+    right: 3vw;
+    font-size: 2rem;
+}
+
+#go-up-my-profile:hover{
+    color:#FFE2C0;
+    font-size:40px;
+  }
+ .card-profile-my-fav{
+      margin-bottom:20vh;
+  } 
 
  @media (min-width:700px){
     .delete-profile{
-        margin-top: -40vh;
+        margin-top: 30vh;
         padding-top:-100vh;
+        padding: 2vh 4vw;
+     }
+     i#go-up-my-profile{
+        top: 60vh;
      }
     }
  

@@ -8,7 +8,7 @@ export default class ReusableHeader extends Component {
   }
 
   render() {
-   
+    
     return (
       <div className="header">
         <div className="left">
