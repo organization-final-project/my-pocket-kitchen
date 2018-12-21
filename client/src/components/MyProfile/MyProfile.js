@@ -28,7 +28,6 @@ export default class MyProfile extends Component {
     document.documentElement.scrollTop = 0;
   };
   render() {
-    console.log(this.state.favRecipes);
     return (
       <div>
          <div className="card-profile-my-fav">
