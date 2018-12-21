@@ -32,13 +32,14 @@ p{
   font-size: 15
 }
 .save-recipe:hover{
-  background-color:#877C73;
+  background-color:#FFE2C0;
+  color:#877C73;
 }
 
 .text-save:hover{
   color:white;
 }
-.fa-angle-up{
+#go-up{
   font-size:32px;
   position: absolute;
   position:fixed;
@@ -47,10 +48,19 @@ p{
   cursor:pointer;
 
 }
-.fa-angle-up:hover{
+#go-up:hover{
   color:#FFE2C0;
   font-size:40px;
 }
-/* .card:last-child{
- margin-bottom:10vh;
-} */
+
+.container-all-recipes{
+  margin-bottom:20vh;
+}
+
+
+@media (min-width:700px){
+  .container-all-recipes{
+    margin-bottom:30vh;
+   }
+  }
+

@@ -30,7 +30,7 @@ export default class CardRecipe extends Component {
     let {name,img,url} = this.props
    let infoRecipe = {name, img, url}
     return (
-      <div>
+      <div className="cards-container">
         
         <div className = "card">
         <h1>{this.props.name}</h1>

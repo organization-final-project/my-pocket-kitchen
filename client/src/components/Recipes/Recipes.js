@@ -52,7 +52,7 @@ componentWillMount = () =>{
   render() {
     
     return (
-      <div>
+      <div className="container-all-recipes">
         <Search onSearchChange={this.onSearchChange} />
         {Array.isArray(this.state.recipes) ? (
           this.state.recipes.map(recipe => {

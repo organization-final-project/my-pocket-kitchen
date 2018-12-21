@@ -22,36 +22,22 @@ export default class MyProfile extends Component {
     this.authService.delete(this.props.user);
     this.props.logout();
   };
+
+  topFunction = () => {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  };
   render() {
     console.log(this.state.favRecipes);
     return (
       <div>
-        <div className="go-and-delete">
-          <div className="delete-profile border card-profile">
-            <p>Enough just for now...</p>
-            <a
-              href
-              className="button is-primary buttonAdd deleteButton"
-              style={{
-                color: "white",
-                backgroundColor: "#877C73",
-                border: "1px solid #877C73"
-              }}
-              onClick={() => this.props.logout()}
-            >
-              Go out
-            </a>
-            <i
-              class="fas fa-sign-out-alt goOut"
-              style={{ fontSize: 32, color: "#877C73" }}
-            />
-          </div>
-          <div>
-            <h1>This are your favorite Recipes</h1>
+         <div className="card-profile-my-fav">
+            <h1 className="title-fav-recipes">These are your favorite recipes</h1>
             {this.state.favRecipes.map(element => {
-              return <h1>{element.name}</h1>;
+              return <div className="card-fav-recipe"><div><h3>{element.name}</h3><a className="button-go-fav-recipes" href={element.url}>Go</a></div><img src={element.img} alt="info-recipe" width="150vw" height="150vh"></img></div>;
             })}
           </div>
+
           <div className="delete-profile card-profile">
             <p>Tired of being productive?</p>
             <a
@@ -71,7 +57,11 @@ export default class MyProfile extends Component {
               style={{ fontSize: 32, color: "#877C73" }}
             />
           </div>
-        </div>
+          <i
+          id="go-up-my-profile"
+          className="fas fa-angle-up"
+          onClick={() => this.topFunction()}
+        />
         <MyFooter />
       </div>
     );

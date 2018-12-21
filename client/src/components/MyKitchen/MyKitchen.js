@@ -181,7 +181,7 @@ export default class MyKitchen extends Component {
             }}
           >
             {" "}
-            Save The List
+            Save the list
           </a>
           <MyFooter />
         </section>
