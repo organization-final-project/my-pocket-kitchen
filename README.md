@@ -14,6 +14,9 @@ HTML5
 CSS3
 MongoDB
 
+## APIs empleadas
+Edaman
+
 ## ¿Dónde puedo verlo? 
 Para utilizarla, entra al siguiente enlace:
 https://my-pocket-kitchen.herokuapp.com/ 
