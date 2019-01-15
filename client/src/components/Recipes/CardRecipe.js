@@ -12,10 +12,6 @@ export default class CardRecipe extends Component {
     }
   }
 
-  // updateIngredients = (ing) =>{
-  //   this.setState({ingredients: recipe.recipeDetails.ingredients})
-  // }
-
   componentWillMount = () =>{
     this.setState({...this.state, favRecipes:this.props.user.favRecipes})
   }
@@ -36,7 +32,6 @@ export default class CardRecipe extends Component {
         <h1>{this.props.name}</h1>
         <img src={this.props.img} alt="" style={{height:120}}/>
         {this.props.ing.map(ingredient=>{
-          // console.log(ingredient)
           return <p>{ingredient}</p>
         
         })}

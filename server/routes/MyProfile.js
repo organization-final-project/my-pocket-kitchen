@@ -5,7 +5,6 @@ const User = require("../models/User");
 
 router.get("/delete/:id", (req, res, next) => {
   const userID = req.params.id;
-  console.log(userID);
   User.findByIdAndDelete({ _id:userID })
     .then(() => {
       console.log("delete user");

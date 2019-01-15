@@ -10,7 +10,6 @@ class AuthService {
 
   signup = (username) => {
   
-    //  axios.post("/signup", {user}, {withCredentials: true})
     
     return this.service.post('/auth/signup', username)
     .then(response => response.data)
@@ -18,7 +17,6 @@ class AuthService {
   }
 
   login = (username) => {
-    // axios.post("http://localhost:5000/auth/login", {user}, {withCredentials: true})
     return this.service.post('/auth/login', username)
     .then(response => response.data)
   }
@@ -40,7 +38,6 @@ class AuthService {
 
   myKitchen = (shoppingList) => {
     return this.service.post('my-kitchen',shoppingList)
-    // .then(response => response.data)
   }
   
   delete = (user) =>{

@@ -12,7 +12,6 @@ export default class CardKitchen extends Component {
         </div>
         <div className="tabs is-centered">
           <ul>
-            {/* <li className="is-active"> */}
             <li className="non-active">
               <a>
                 <span className="icon is-small">
@@ -21,14 +20,12 @@ export default class CardKitchen extends Component {
                     alt=""
                     style={{ width: 200, height: 30 }}
                   />
-                  {/* <i className="fas fa-image" aria-hidden="true" /> */}
                 </span>
                 <span>Fridge</span>
               </a>
             </li>
             <div className="listFridge">
               <ul>
-                {/* <li>{this.props.list}</li> */}
               </ul>
             </div>
 
@@ -40,7 +37,6 @@ export default class CardKitchen extends Component {
                     alt=""
                     style={{ width: 200, height: 30 }}
                   />
-                  {/* <i className="fas fa-music" aria-hidden="true" /> */}
                 </span>
                 <span>Pantry</span>
               </a>

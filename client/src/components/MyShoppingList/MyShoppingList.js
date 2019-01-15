@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import MyFooter from "../Footer/MyFooter";
 import Search from "../search/Search";
 import "./Mylist.css";
-import AuthService from '../auth/AuthService'
+import AuthService from "../auth/AuthService";
 
 export default class MyShoppingList extends Component {
   constructor(props) {
@@ -10,9 +10,7 @@ export default class MyShoppingList extends Component {
 
     this.state = {
       userID: this.props.user._id,
-      MyShoppingList: this.props.user.myShoppingList,
-      headerTitle: "My shopping lists"
-      
+      MyShoppingList: this.props.user.myShoppingList
     };
     this.authService = new AuthService();
   }
@@ -25,25 +23,20 @@ export default class MyShoppingList extends Component {
     let valueOfSearch = document.getElementsByClassName("searchBar").innerHTML;
     this.state.MyShoppingList.push(valueOfSearch);
     this.setState({ ...this.state, MyShoppingList: this.state.MyShoppingList });
-    //e.preventDefault();
   };
 
   removeItem = index => {
     let valueOfRemove = this.state.MyShoppingList;
     valueOfRemove.splice(index, 1);
     this.setState({ ...this.state, MyShoppingList: this.state.MyShoppingList });
-
-   
   };
-  componentDidMount=()=>{
-    document.getElementById("title").innerHTML = "My Shopping List"
-    
-   }
-  addShoppingList=()=>{
-    const {MyShoppingList, userID}=this.state
-    this.authService.addShoppingList({MyShoppingList, userID})
-
-  }
+  componentDidMount = () => {
+    document.getElementById("title").innerHTML = "My Shopping List";
+  };
+  addShoppingList = () => {
+    const { MyShoppingList, userID } = this.state;
+    this.authService.addShoppingList({ MyShoppingList, userID });
+  };
   render() {
     return (
       <div>
@@ -60,7 +53,7 @@ export default class MyShoppingList extends Component {
             <h4 className="title-shopping-list">My shopping list</h4>
             <i class="fas fa-pencil-alt" />
           </div>
-          <ul className="list-items">
+          <ul>
             {this.state.MyShoppingList.map((item, index) => {
               return (
                 <div className="item-shopping-list">
@@ -79,7 +72,10 @@ export default class MyShoppingList extends Component {
         <a
           href
           className="button is-primary buttonAdd save"
-          onClick={()=>{this.addShoppingList()}}>
+          onClick={() => {
+            this.addShoppingList();
+          }}
+        >
           Save the list
         </a>
         <MyFooter />

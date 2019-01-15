@@ -23,7 +23,6 @@ export default class Recipes extends Component {
       axios
         .post(`${process.env.REACT_APP_API_URL}/recipes`, { search: e })
         .then(res => {
-          // console.log('respuesta de mi server', res.data.allRecipes)
 
           this.setState({ recipes: res.data.allRecipes });
         })

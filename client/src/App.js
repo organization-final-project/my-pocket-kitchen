@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-// import MyFooter from '../src/Components/Footer/MyFooter';
 import { Route, Switch, withRouter } from "react-router-dom";
 import MyKitchen from "./components/MyKitchen/MyKitchen";
 import Recipes from "./components/Recipes/Recipes";
@@ -7,11 +6,9 @@ import MyShoppingList from "./components/MyShoppingList/MyShoppingList";
 import MyProfile from "./components/MyProfile/MyProfile";
 import Login from "./components/auth/Login";
 import Signup from "./components/auth/SignUp";
-import Logout from "./components/auth/Logout";
 import AuthService from "./components/auth/AuthService";
 import { Redirect } from "react-router-dom";
 import ReusableHeader from "./components/ReusableHeader/ReusableHeader";
-// import Message from "./components/Message";
 
 import "./App.css";
 
